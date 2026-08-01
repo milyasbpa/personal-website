@@ -27,37 +27,29 @@ personal-website/
 │   ├── ARCHITECTURE.md
 │   └── EXECUTION_PLAN.md
 ├── src/
-│   ├── app/                   # Next.js App Router
-│   │   ├── layout.tsx         # Root layout
-│   │   ├── page.tsx           # Home page
-│   │   ├── globals.css        # Global styles + tokens
-│   │   ├── blog/
-│   │   │   ├── page.tsx       # Blog listing
+│   ├── app/                   # Next.js App Router (thin routing & SEO metadata)
+│   │   ├── layout.tsx         # Root layout (renders Navbar & Footer from core/components/layout)
+│   │   ├── page.tsx           # Homepage (/) -> renders <HomepageContainer />
+│   │   ├── writing/
+│   │   │   ├── page.tsx       # Blog listing (/writing) -> renders <BlogsContainer />
 │   │   │   └── [slug]/
-│   │   │       └── page.tsx   # Individual post
-│   │   ├── now/
-│   │   │   └── page.tsx       # Now page (what I'm working on)
-│   │   ├── uses/
-│   │   │   └── page.tsx       # Uses page (tools & setup)
+│   │   │       └── page.tsx   # Blog detail (/writing/[slug]) -> renders <BlogDetailContainer />
 │   │   └── api/
 │   │       └── contact/
-│   │           └── route.ts   # Contact form handler
-│   ├── components/
-│   │   ├── layout/            # Layout components (Navbar, Footer, Sidebar)
-│   │   ├── sections/          # Page sections (Hero, About, Experience, etc.)
-│   │   ├── blog/              # Blog-specific components
-│   │   ├── now/               # Heatmap, progress bars, current focus
-│   │   └── ui/                # Reusable UI primitives (Button, Badge, Card, etc.)
-│   ├── content/
-│   │   └── blog/              # MDX blog posts
-│   ├── data/                  # Static data (experience, now page data)
-│   ├── hooks/                 # Custom React hooks
-│   ├── lib/                   # Utility functions
-│   │   ├── mdx.ts             # MDX processing utilities
-│   │   ├── motion.ts          # Framer Motion animation presets
-│   │   ├── utils.ts           # General utilities (cn, formatDate, etc.)
-│   │   └── constants.ts       # App constants
-│   ├── styles/                # Additional style files
+│   │           └── route.ts   # Contact form Edge handler
+│   ├── core/                  # Global shared layer across all features
+│   │   ├── components/
+│   │   │   ├── layout/        # Navbar/, Footer/, SectionWrapper/ (each in its own folder)
+│   │   │   └── ui/            # Button/, Card/, Badge/, ThemeToggle/ (each in its own folder)
+│   │   ├── config/            # siteMetadata.ts, navigation.ts
+│   │   ├── hooks/             # Global hooks (useTheme, useMediaQuery, useScrollDirection)
+│   │   ├── lib/               # Utility functions (cn, formatDate, mdx-loader)
+│   │   ├── styles/            # index.css (Tailwind CSS 4 + Design Tokens)
+│   │   └── types/             # Global TypeScript interfaces
+│   └── features/              # Exactly 3 feature domains (1 per route in prototype)
+│       ├── homepage/          # Feature 1: Homepage (/, includes Hero, About, Experience, Now, Contact)
+│       ├── blogs/             # Feature 2: Blog Listing (/writing)
+│       └── blog/              # Feature 3: Blog Detail (/writing/[slug], includes MDX custom components)
 │   └── types/                 # TypeScript type definitions
 ├── public/
 │   ├── images/

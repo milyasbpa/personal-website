@@ -286,6 +286,8 @@ bas.
 9. **Storybook** — Component documentation + visual testing (also deployable as portfolio project)
 10. **MCP Integration** — Model Context Protocol servers untuk AI-assisted development
 
+> **📐 Complete Modular Codebase Architecture:** Lihat [CODEBASE_ARCHITECTURE.md](file:///Users/ilyasbashirah/Documents/kerja/bas.co/personal-website/docs/CODEBASE_ARCHITECTURE.md) untuk spesifikasi detail pembagian layer (`src/core`, `src/features`, `src/app`), pola *Zero Prop-Drilling Container*, dan matriks *Quality Gates*.
+
 ---
 
 ## 8. Design Tokens Summary
