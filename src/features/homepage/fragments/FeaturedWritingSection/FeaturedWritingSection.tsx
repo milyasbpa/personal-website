@@ -1,0 +1,53 @@
+'use client';
+
+import React from 'react';
+import Link from 'next/link';
+import { POSTS } from '../../data/homeData';
+import { FeaturedPostCard } from '../../components/FeaturedPostCard/FeaturedPostCard';
+import { cn } from '@/core/lib/cn';
+
+export interface FeaturedWritingSectionProps {
+  className?: string;
+}
+
+export function FeaturedWritingSection({ className }: FeaturedWritingSectionProps) {
+  return (
+    <section id="writing" aria-labelledby="writing-title" className={cn('py-12 md:py-16', className)}>
+      <h2
+        id="writing-title"
+        className="text-xs uppercase tracking-widest mb-6 font-mono text-[var(--fg-muted)]"
+      >
+        Writing
+      </h2>
+      <div className="flex flex-col gap-4">
+        {POSTS.map((post) => (
+          <FeaturedPostCard key={post.slug} post={post} />
+        ))}
+      </div>
+      <Link
+        href="/writing"
+        className={cn(
+          'inline-flex items-center gap-1.5 text-sm font-medium mt-5 text-[var(--accent)]',
+          'hover:gap-2.5 transition-all duration-200'
+        )}
+      >
+        View all writing
+        <svg
+          width="13"
+          height="13"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+          />
+        </svg>
+      </Link>
+    </section>
+  );
+}

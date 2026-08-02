@@ -1,0 +1,62 @@
+'use client';
+
+import React from 'react';
+import { useTheme } from 'next-themes';
+import { HEATMAP_DATA, HEATMAP_LEVELS_LIGHT, HEATMAP_LEVELS_DARK } from '../../data/homeData';
+import { cn } from '@/core/lib/cn';
+
+export interface HeatmapGridProps {
+  className?: string;
+}
+
+export function HeatmapGrid({ className }: HeatmapGridProps) {
+  const { resolvedTheme, theme } = useTheme();
+  const isDark = resolvedTheme === 'dark' || theme === 'dark';
+  const levels = isDark ? HEATMAP_LEVELS_DARK : HEATMAP_LEVELS_LIGHT;
+
+  return (
+    <div
+      className={cn(
+        'p-6 rounded-xl border border-[var(--border)] bg-[var(--bg-card)]',
+        className
+      )}
+      data-testid="heatmap-grid"
+    >
+      <div className="flex items-start justify-between mb-4">
+        <div>
+          <h3 className="text-sm font-semibold text-[var(--fg)]">GitHub Activity</h3>
+          <p className="text-xs mt-0.5 text-[var(--fg-subtle)]">
+            Contribution graph across personal &amp; open-source projects
+          </p>
+        </div>
+      </div>
+      <div
+        className="overflow-x-auto bg-transparent pb-2"
+        role="img"
+        aria-label="GitHub annual contribution activity heatmap grid"
+      >
+        <div className="flex gap-[3px] min-w-max">
+          {HEATMAP_DATA.map((week, wi) => (
+            <div key={wi} className="flex flex-col gap-[3px]" data-testid="heatmap-column">
+              {week.map((level, di) => (
+                <div
+                  key={di}
+                  className="w-[10px] h-[10px] rounded-[2px] hover:opacity-70 transition-opacity"
+                  style={{ backgroundColor: levels[level] }}
+                  data-level={level}
+                />
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="flex items-center justify-end gap-1.5 mt-3">
+        <span className="text-[10px] font-mono text-[var(--fg-subtle)]">Less</span>
+        {levels.map((c, i) => (
+          <div key={i} className="w-[10px] h-[10px] rounded-[2px]" style={{ backgroundColor: c }} />
+        ))}
+        <span className="text-[10px] font-mono text-[var(--fg-subtle)]">More</span>
+      </div>
+    </div>
+  );
+}

@@ -119,20 +119,20 @@ graph LR
 
 **Goal:** Semua section di halaman utama.
 
-| # | Task | Agent Skill | Estimated | Depends On |
-|---|---|---|---|---|
-| 3.1 | Hero section (name, tagline, CTA, status badge, photo) | `component-build` | 60 min | Phase 2 |
-| 3.2 | About section (bio text, tech stack pills) | `component-build` | 30 min | Phase 2 |
-| 3.3 | Experience section (timeline, company cards) | `component-build` | 60 min | Phase 2 |
-| 3.4 | Featured Writing section (3 post cards, skeleton) | `component-build` | 30 min | Phase 2 |
-| 3.5 | Now preview section (current focus + heatmap mini) | `component-build` | 45 min | Phase 2 |
-| 3.6 | Contact section (form + validation) | `component-build` | 45 min | Phase 2 |
-| 3.7 | Contact form API route (server action) | `nextjs-setup` | 30 min | 3.6 |
-| 3.8 | Add scroll animations (Framer Motion) to all sections | `animation-system` | 45 min | 3.1-3.6 |
-| 3.9 | **Write Storybook stories for section components** | `storybook` | 20 min | 3.1-3.6 |
-| 3.10 | Verify: all sections render, responsive, animations smooth | - | 30 min | All above |
+| # | Task | Agent Skill | Estimated | Depends On | Status |
+|---|---|---|---|---|---|
+| 3.1 | [x] Hero section (name, tagline, CTA, status badge, photo) | `component-build` | 60 min | Phase 2 | ✅ Done |
+| 3.2 | [x] About section (bio text, tech stack pills) | `component-build` | 30 min | Phase 2 | ✅ Done |
+| 3.3 | [x] Experience section (timeline, company cards) | `component-build` | 60 min | Phase 2 | ✅ Done |
+| 3.4 | [x] Featured Writing section (3 post cards, skeleton) | `component-build` | 30 min | Phase 2 | ✅ Done |
+| 3.5 | [x] Now preview section (current focus + heatmap mini) | `component-build` | 45 min | Phase 2 | ✅ Done |
+| 3.6 | [x] Contact section (form + validation) | `component-build` | 45 min | Phase 2 | ✅ Done |
+| 3.7 | [x] Contact form API route (server action / client simulation) | `nextjs-setup` | 30 min | 3.6 | ✅ Done |
+| 3.8 | [x] Add scroll animations (Framer Motion) to all sections | `animation-system` | 45 min | 3.1-3.6 | ✅ Done |
+| 3.9 | [x] **Write Storybook stories for section components** | `storybook` | 20 min | 3.1-3.6 | ✅ Done |
+| 3.10 | [x] Verify: all sections render, responsive, animations smooth | - | 30 min | All above | ✅ Done |
 
-**Phase 3 Total: ~6.5 hours**  
+**Phase 3 Total: ~6.5 hours (✅ Completed)**  
 **Checkpoint:** Home page complete with all sections, animations, responsive.
 
 ---
