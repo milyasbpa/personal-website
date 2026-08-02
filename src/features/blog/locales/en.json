@@ -1,0 +1,20 @@
+{
+  "navigation": {
+    "allWriting": "All writing",
+    "prevArticle": "← Previous Article",
+    "nextArticle": "Next Article →"
+  },
+  "toc": {
+    "title": "Table of Contents",
+    "ariaLabel": "Table of Contents"
+  },
+  "codeBlock": {
+    "copy": "Copy",
+    "copied": "Copied!",
+    "ariaCopy": "Copy code to clipboard",
+    "ariaCopied": "Copied code to clipboard"
+  },
+  "readingProgress": {
+    "ariaLabel": "Article reading progress"
+  }
+}

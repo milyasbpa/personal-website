@@ -52,8 +52,9 @@ src/
 │   │       ├── Footer/         # Footer.tsx, Footer.test.tsx, Footer.stories.tsx
 │   │       └── SectionWrapper/ # SectionWrapper.tsx, SectionWrapper.test.tsx, SectionWrapper.stories.tsx
 │   ├── config/                 # siteMetadata.ts, navigation.ts
+│   ├── content/                # Global MDX content repository (blog/.mdx posts)
 │   ├── hooks/                  # Global hooks (useTheme, useMediaQuery, useScrollDirection)
-│   ├── lib/                    # Utility functions (cn.ts, formatDate.ts, mdx-loader.ts)
+│   ├── lib/                    # Utility functions (cn.ts, formatDate.ts, mdx.ts)
 │   ├── styles/                 # index.css (Tailwind CSS 4 + Design Tokens)
 │   └── types/                  # Global TypeScript interfaces
 │
@@ -74,8 +75,10 @@ src/
     │   │   ├── HeatmapGrid/
     │   │   └── ContactForm/
     │   ├── hooks/
-    │   ├── i18n/
+    │   ├── locales/
+    │   │   └── en.json         # Feature-scoped English JSON dictionary
     │   └── data/
+    │       └── homeData.ts     # Data provider loading from locales/en.json
     ├── blogs/                  # Feature 2: Blog Listing (/writing)
     │   ├── container/
     │   │   └── BlogsContainer.tsx
@@ -83,21 +86,29 @@ src/
     │   │   └── BlogListSection/ # BlogListSection.tsx, .test.tsx, .stories.tsx
     │   ├── components/
     │   │   ├── BlogCard/       # BlogCard.tsx, .test.tsx, .stories.tsx
-    │   │   └── BlogTagFilter/
+    │   │   └── TagFilter/
     │   ├── hooks/
-    │   ├── i18n/
+    │   ├── locales/
+    │   │   └── en.json         # Feature-scoped English JSON dictionary
     │   └── data/
+    │       └── blogsData.ts    # Data provider loading from locales/en.json
     └── blog/                   # Feature 3: Blog Detail (/writing/[slug])
         ├── container/
         │   └── BlogDetailContainer.tsx
         ├── fragments/
         │   ├── BlogPostHeader/ # BlogPostHeader.tsx, .test.tsx, .stories.tsx
-        │   └── BlogPostContent/
+        │   ├── BlogPostContent/
+        │   └── BlogPostFooter/
         ├── components/         # Feature-scoped MDX custom components (ONLY used in blog post detail)
         │   ├── CodeBlock/      # CodeBlock.tsx, CodeBlock.test.tsx, CodeBlock.stories.tsx
         │   ├── Callout/        # Callout.tsx, Callout.test.tsx, Callout.stories.tsx
         │   ├── VocabCard/      # VocabCard.tsx, VocabCard.test.tsx, VocabCard.stories.tsx
+        │   ├── ReadingProgress/
         │   └── TableOfContents/
+        ├── locales/
+        │   └── en.json         # Feature-scoped English JSON dictionary
+        └── data/
+            └── blogData.ts     # Data provider loading from locales/en.json
         ├── hooks/
         ├── i18n/
         └── data/

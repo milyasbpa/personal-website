@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { EXPERIENCE } from '../../data/homeData';
+import { EXPERIENCE, HOMEPAGE_DICTIONARY } from '../../data/homeData';
 import { ExperienceItem } from '../../types';
 import { ExperienceCard } from '../../components/ExperienceCard/ExperienceCard';
 import { Pill } from '@/core/components/ui/Pill/Pill';
@@ -13,6 +13,7 @@ export interface ExperienceSectionProps {
 
 export function ExperienceSection({ className }: ExperienceSectionProps) {
   const [selectedJob, setSelectedJob] = useState<ExperienceItem | null>(null);
+  const expDict = HOMEPAGE_DICTIONARY.sections.experience;
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -40,7 +41,7 @@ export function ExperienceSection({ className }: ExperienceSectionProps) {
         id="experience-title"
         className="text-xs uppercase tracking-widest mb-6 font-mono text-[var(--fg-muted)]"
       >
-        Experience
+        {expDict.title}
       </h2>
       <div className="flex flex-col gap-4">
         {EXPERIENCE.map((job) => (
@@ -49,7 +50,7 @@ export function ExperienceSection({ className }: ExperienceSectionProps) {
       </div>
 
       <a
-        href="/resume.pdf"
+        href={expDict.resumeButton.url}
         download
         className={cn(
           'mt-6 w-full flex items-center justify-between px-5 py-4 rounded-xl border border-[var(--border)]',
@@ -75,9 +76,11 @@ export function ExperienceSection({ className }: ExperienceSectionProps) {
             />
           </svg>
           <div>
-            <p className="text-sm font-medium leading-none text-[var(--fg)]">Get my full resume</p>
+            <p className="text-sm font-medium leading-none text-[var(--fg)]">
+              {expDict.resumeButton.title}
+            </p>
             <p className="text-xs font-mono mt-1 text-[var(--fg-subtle)]">
-              PDF · Updated Jul 2026
+              {expDict.resumeButton.meta}
             </p>
           </div>
         </div>
@@ -135,7 +138,7 @@ export function ExperienceSection({ className }: ExperienceSectionProps) {
                 type="button"
                 onClick={() => setSelectedJob(null)}
                 className="w-8 h-8 flex items-center justify-center rounded-lg border border-[var(--border)] text-[var(--fg-muted)] hover:text-[var(--fg)] transition-colors"
-                aria-label="Close details"
+                aria-label={expDict.modal.closeLabel}
               >
                 ✕
               </button>
@@ -144,7 +147,7 @@ export function ExperienceSection({ className }: ExperienceSectionProps) {
             <div className="flex-1 overflow-y-auto p-6 space-y-6">
               <div>
                 <h4 className="text-xs uppercase tracking-widest font-mono mb-2 text-[var(--fg-muted)]">
-                  Overview
+                  {expDict.modal.overview}
                 </h4>
                 <p className="text-sm leading-relaxed text-[var(--fg-body)]">
                   {selectedJob.fullDesc}
@@ -153,7 +156,7 @@ export function ExperienceSection({ className }: ExperienceSectionProps) {
 
               <div>
                 <h4 className="text-xs uppercase tracking-widest font-mono mb-3 text-[var(--fg-muted)]">
-                  Key Impact &amp; Contributions
+                  {expDict.modal.contributions}
                 </h4>
                 <ul className="space-y-3">
                   {selectedJob.points.map((pt, i) => (
@@ -170,7 +173,7 @@ export function ExperienceSection({ className }: ExperienceSectionProps) {
 
               <div>
                 <h4 className="text-xs uppercase tracking-widest font-mono mb-3 text-[var(--fg-muted)]">
-                  Technologies
+                  {expDict.modal.technologies}
                 </h4>
                 <div className="flex flex-wrap gap-1.5">
                   {selectedJob.tech.map((t) => (

@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { BLOG_DICTIONARY } from '../../data/blogData';
 import type { BlogPost } from '@/core/lib/mdx';
 
 export interface BlogPostFooterProps {
@@ -20,7 +21,7 @@ export function BlogPostFooter({ prevPost, nextPost }: BlogPostFooterProps) {
             className="group block p-4 rounded-xl border border-[var(--border)] hover:border-[var(--accent-border)] transition-all h-full"
           >
             <div className="text-xs font-mono text-[var(--fg-subtle)] mb-1 group-hover:text-[var(--accent)]">
-              ← Previous Article
+              {BLOG_DICTIONARY.navigation.prevArticle}
             </div>
             <div className="text-sm font-semibold text-[var(--fg)] group-hover:text-[var(--accent)] line-clamp-1">
               {prevPost.title}
@@ -37,7 +38,7 @@ export function BlogPostFooter({ prevPost, nextPost }: BlogPostFooterProps) {
             className="group block p-4 rounded-xl border border-[var(--border)] hover:border-[var(--accent-border)] transition-all h-full"
           >
             <div className="text-xs font-mono text-[var(--fg-subtle)] mb-1 group-hover:text-[var(--accent)]">
-              Next Article →
+              {BLOG_DICTIONARY.navigation.nextArticle}
             </div>
             <div className="text-sm font-semibold text-[var(--fg)] group-hover:text-[var(--accent)] line-clamp-1">
               {nextPost.title}

@@ -1,0 +1,209 @@
+{
+  "profile": {
+    "name": "Ilyas Bashirah",
+    "nicknamePrefix": "Call me ",
+    "nickname": "bas.",
+    "tagline": "Crafting interfaces with intention.",
+    "bioShort": "Senior frontend engineer — design systems, performance, DX. Also studying 日本語 (JLPT N5).",
+    "mobileBio": "Crafting interfaces with intention. Senior frontend engineer focused on design systems and performance.",
+    "statusBadge": "Available for Work",
+    "heroStatusBadge": "Available for Work — Open to Senior Frontend roles",
+    "avatarAlt": "Ilyas Bashirah"
+  },
+  "nav": [
+    { "id": "about", "label": "About", "sub": "5+ yrs · React & TS", "meta": "Stack" },
+    { "id": "experience", "label": "Experience", "sub": "3 companies", "meta": "2019–now" },
+    { "id": "writing", "label": "Writing", "sub": "3 published posts", "meta": "Blog" },
+    { "id": "now", "label": "Self Exploration", "sub": "What I'm working on", "meta": "Jul 2026" },
+    { "id": "contact", "label": "Contact", "sub": "Open to opportunities", "meta": "Hire me" }
+  ],
+  "social": [
+    { "label": "GitHub", "href": "https://github.com" },
+    { "label": "LinkedIn", "href": "https://linkedin.com" },
+    { "label": "Email", "href": "mailto:ilyas@bas.dev" }
+  ],
+  "sections": {
+    "about": {
+      "title": "About",
+      "bioPart1": "I'm a frontend engineer with 5+ years building production interfaces for developer tools, design systems, and SaaS products. I care deeply about the intersection of ",
+      "bioHighlight1": "design and engineering",
+      "bioPart2": " — where a well-typed component system meets a thoughtful interaction model.",
+      "bioPart3": "My work spans ",
+      "bioTech1": "React",
+      "bioPart4": ", ",
+      "bioTech2": "TypeScript",
+      "bioPart5": ", and ",
+      "bioTech3": "Next.js",
+      "bioPart6": " at scale — with a focus on accessibility, performance, and composability. I also study ",
+      "bioHighlight2": "日本語 (Japanese)",
+      "bioPart7": " — working toward JLPT N5.",
+      "techPills": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Framer Motion"
+      ]
+    },
+    "experience": {
+      "title": "Experience",
+      "resumeButton": {
+        "title": "Get my full resume",
+        "meta": "PDF · Updated Jul 2026",
+        "url": "/resume.pdf"
+      },
+      "modal": {
+        "overview": "Overview",
+        "contributions": "Key Impact & Contributions",
+        "technologies": "Technologies",
+        "closeLabel": "Close details"
+      },
+      "card": {
+        "ariaLabelPrefix": "View full details for",
+        "at": "at",
+        "fullStory": "Full story"
+      },
+      "items": [
+        {
+          "company": "Vercel",
+          "url": "#",
+          "role": "Senior Frontend Engineer",
+          "dates": "Jan 2023 — Present",
+          "location": "Remote · San Francisco, CA",
+          "desc": "Building the Next.js App Router DX and developer-facing dashboard tooling used by 1M+ developers globally.",
+          "fullDesc": "As a Senior Frontend Engineer at Vercel, I work at the intersection of developer experience and product engineering — owning the App Router documentation tooling, internal component libraries, and the Vercel Dashboard used by over a million developers worldwide. I collaborate closely with the Next.js core team to ship features that shape how modern web apps are built.",
+          "points": [
+            "Led the frontend rebuild of the Vercel Dashboard analytics page — reduced initial load time by 42% through route-level code splitting and streaming SSR.",
+            "Architected a shared component library (70+ components) used across 4 product teams, with full Storybook documentation and automated visual regression tests.",
+            "Designed and shipped the App Router migration guide tooling — an interactive step-by-step UI used by 200K+ developers.",
+            "Established frontend performance budgets and Lighthouse CI gates across the monorepo, catching regressions before production.",
+            "Mentored 2 junior engineers through structured code reviews and weekly 1:1 architecture sessions."
+          ],
+          "tech": ["Next.js", "TypeScript", "Tailwind CSS", "React"]
+        },
+        {
+          "company": "Linear",
+          "url": "#",
+          "role": "Frontend Engineer",
+          "dates": "Mar 2021 — Dec 2022",
+          "location": "Remote · San Francisco, CA",
+          "desc": "Shipped real-time collaboration features, keyboard-first UX patterns, and performance-critical rendering work.",
+          "fullDesc": "At Linear, I worked on one of the fastest and most keyboard-native project management tools in the industry. My focus was on real-time collaboration infrastructure, virtual rendering performance, and crafting the interaction design that Linear is known for — snappy, opinionated, and zero-friction.",
+          "points": [
+            "Built real-time presence indicators and collaborative cursor tracking using WebSockets and CRDT-based state sync.",
+            "Implemented a virtualized list renderer for issues and projects — handled 10,000+ items with consistent 60fps scroll.",
+            "Designed and shipped the keyboard shortcut system (command palette, global keybindings) that became a core product differentiator.",
+            "Reduced bundle size by 31% through tree-shaking audits, dynamic imports, and migrating to lighter icon sets.",
+            "Collaborated directly with design to develop a motion language guide for all product animations."
+          ],
+          "tech": ["React", "TypeScript", "CSS Modules", "GraphQL"]
+        },
+        {
+          "company": "Shopify",
+          "url": "#",
+          "role": "Frontend Developer",
+          "dates": "Jun 2019 — Feb 2021",
+          "location": "Toronto, Canada",
+          "desc": "Contributed to Polaris design system and merchant-facing storefront experiences on the checkout team.",
+          "fullDesc": "At Shopify I started my career on the Checkout team, contributing to one of the highest-traffic, highest-stakes frontend surfaces on the web. I later moved to the Polaris design system team, where I helped shape the component library used by thousands of internal and external developers building on Shopify.",
+          "points": [
+            "Shipped accessible, responsive UI components for the checkout flow — serving 500M+ transactions annually.",
+            "Contributed 12 new components to Polaris (Shopify's design system) including DataTable, DatePicker, and Tooltip variants.",
+            "Wrote comprehensive accessibility audits (WCAG 2.1 AA) for the merchant admin, fixing 40+ violations.",
+            "Built an automated component documentation generator using AST parsing — eliminated manual doc maintenance.",
+            "Participated in the Great Storefront Migration (Liquid → React) as part of a 15-engineer cross-functional squad."
+          ],
+          "tech": ["React", "Ruby on Rails", "Sass", "GraphQL"]
+        }
+      ]
+    },
+    "writing": {
+      "title": "Writing",
+      "viewAll": "View all writing",
+      "posts": [
+        {
+          "slug": "intentional-animation-product-ui",
+          "title": "The Case for Intentional Animation in Product UI",
+          "date": "Jul 12, 2026",
+          "read": "5 min read",
+          "tag": "Design Engineering"
+        },
+        {
+          "slug": "five-years-typescript-type-safety",
+          "title": "What Five Years of TypeScript Taught Me About Type Safety",
+          "date": "Jun 3, 2026",
+          "read": "7 min read",
+          "tag": "TypeScript"
+        },
+        {
+          "slug": "css-grid-end-of-layout-frameworks",
+          "title": "CSS Grid and the End of Layout Frameworks",
+          "date": "Apr 18, 2026",
+          "read": "4 min read",
+          "tag": "CSS"
+        }
+      ]
+    },
+    "now": {
+      "title": "Self Exploration",
+      "subtitle": "What I'm currently working on",
+      "workingOnHeading": "Currently Working On",
+      "items": [
+        "Architecting a design system with Storybook 8 and CVA — targeting zero runtime overhead.",
+        "Building a Japanese vocabulary app (日本語学習アプリ) as a side project and learning tool.",
+        "Contributing to open-source Next.js middleware patterns and App Router edge caching."
+      ],
+      "heatmap": {
+        "title": "GitHub Activity",
+        "subtitle": "Contribution graph across personal & open-source projects",
+        "ariaLabel": "GitHub annual contribution activity heatmap grid",
+        "less": "Less",
+        "more": "More"
+      },
+      "language": {
+        "heading": "Language",
+        "items": [
+          {
+            "flag": "🇺🇸",
+            "lang": "English",
+            "native": "English",
+            "level": "Professional",
+            "levelDesc": "Full professional proficiency"
+          },
+          {
+            "flag": "🇯🇵",
+            "lang": "Japanese",
+            "native": "日本語",
+            "level": "Learning · N5",
+            "levelDesc": "Beginner — actively studying"
+          }
+        ]
+      }
+    },
+    "contact": {
+      "title": "Contact",
+      "subtitle": "Have a question or want to work together? Leave a message.",
+      "form": {
+        "nameLabel": "Name",
+        "namePlaceholder": "Your name",
+        "emailLabel": "Email",
+        "emailPlaceholder": "you@example.com",
+        "messageLabel": "Message",
+        "messagePlaceholder": "What's on your mind?",
+        "sendButton": "Send Message",
+        "sendingButton": "Sending...",
+        "successTitle": "Message sent!",
+        "successMessage": "Thanks for reaching out. I'll reply within a day or two.",
+        "sendAnother": "Send another message"
+      }
+    }
+  },
+  "footer": {
+    "copyright": "© 2026 bas.",
+    "builtWith": "Built with Next.js"
+  },
+  "aria": {
+    "profileAndNav": "Profile and section navigation",
+    "sectionsNav": "Sections"
+  }
+}

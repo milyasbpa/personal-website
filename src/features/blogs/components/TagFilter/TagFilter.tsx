@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { BLOGS_DICTIONARY } from '../../data/blogsData';
 import { cn } from '@/core/lib/cn';
 
 export interface TagFilterProps {
@@ -11,13 +12,14 @@ export interface TagFilterProps {
 }
 
 export function TagFilter({ tags, activeTag, onSelectTag, className }: TagFilterProps) {
-  const allTags = ['All', ...tags.filter((t) => t !== 'All')];
+  const allTagLabel = BLOGS_DICTIONARY.filtering.allTag;
+  const allTags = [allTagLabel, ...tags.filter((t) => t !== allTagLabel)];
 
   return (
     <div
       className={cn('flex flex-wrap items-center gap-2 pb-2', className)}
       role="group"
-      aria-label="Filter blog posts by category tag"
+      aria-label={BLOGS_DICTIONARY.filtering.ariaFilterLabel}
     >
       {allTags.map((tag) => {
         const isActive = tag === activeTag;

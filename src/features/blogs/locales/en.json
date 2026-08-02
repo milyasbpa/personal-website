@@ -1,0 +1,14 @@
+{
+  "header": {
+    "title": "Writing",
+    "description": "Thoughts on frontend engineering, design systems, and the craft of building interfaces. Published when I have something worth saying."
+  },
+  "filtering": {
+    "allTag": "All",
+    "showingPrefix": "Showing",
+    "postSingular": "post",
+    "postPlural": "posts",
+    "noPosts": "No posts found for the tag",
+    "ariaFilterLabel": "Filter blog posts by category tag"
+  }
+}

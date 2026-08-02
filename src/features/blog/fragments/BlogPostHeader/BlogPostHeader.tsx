@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Pill } from '@/core/components/ui/Pill/Pill';
+import { BLOG_DICTIONARY } from '../../data/blogData';
 import type { BlogPost } from '@/core/lib/mdx';
 
 export interface BlogPostHeaderProps {
@@ -18,7 +19,7 @@ export function BlogPostHeader({ post }: BlogPostHeaderProps) {
         <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
         </svg>
-        <span>All writing</span>
+        <span>{BLOG_DICTIONARY.navigation.allWriting}</span>
       </Link>
 
       {/* Metadata */}

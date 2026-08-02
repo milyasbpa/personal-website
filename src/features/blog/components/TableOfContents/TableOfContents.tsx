@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import { BLOG_DICTIONARY } from '../../data/blogData';
 import { cn } from '@/core/lib/cn';
 
 export interface HeadingItem {
@@ -43,10 +44,10 @@ export function TableOfContents({ headings, className }: TableOfContentsProps) {
   return (
     <nav
       className={cn('p-5 rounded-xl border border-[var(--border)] bg-[var(--bg-card)]', className)}
-      aria-label="Table of Contents"
+      aria-label={BLOG_DICTIONARY.toc.ariaLabel}
     >
       <h3 className="text-xs font-mono uppercase tracking-widest text-[var(--fg-muted)] mb-3">
-        Table of Contents
+        {BLOG_DICTIONARY.toc.title}
       </h3>
       <ul className="space-y-2 text-xs font-mono">
         {headings.map((heading) => {

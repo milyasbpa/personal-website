@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { POSTS } from '../../data/homeData';
+import { POSTS, HOMEPAGE_DICTIONARY } from '../../data/homeData';
 import { FeaturedPostCard } from '../../components/FeaturedPostCard/FeaturedPostCard';
 import { cn } from '@/core/lib/cn';
 
@@ -11,13 +11,15 @@ export interface FeaturedWritingSectionProps {
 }
 
 export function FeaturedWritingSection({ className }: FeaturedWritingSectionProps) {
+  const writingDict = HOMEPAGE_DICTIONARY.sections.writing;
+
   return (
     <section id="writing" aria-labelledby="writing-title" className={cn('', className)}>
       <h2
         id="writing-title"
         className="text-xs uppercase tracking-widest mb-6 font-mono text-[var(--fg-muted)]"
       >
-        Writing
+        {writingDict.title}
       </h2>
       <div className="flex flex-col gap-4">
         {POSTS.map((post) => (
@@ -31,7 +33,7 @@ export function FeaturedWritingSection({ className }: FeaturedWritingSectionProp
           'hover:gap-2.5 transition-all duration-200'
         )}
       >
-        View all writing
+        {writingDict.viewAll}
         <svg
           width="13"
           height="13"

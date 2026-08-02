@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { NOW_ITEMS, LANGUAGE_ITEMS } from '../../data/homeData';
+import { NOW_ITEMS, LANGUAGE_ITEMS, HOMEPAGE_DICTIONARY } from '../../data/homeData';
 import { HeatmapGrid } from '../../components/HeatmapGrid/HeatmapGrid';
 import { cn } from '@/core/lib/cn';
 
@@ -10,19 +10,21 @@ export interface NowSectionProps {
 }
 
 export function NowSection({ className }: NowSectionProps) {
+  const nowDict = HOMEPAGE_DICTIONARY.sections.now;
+
   return (
     <section id="now" aria-labelledby="now-title" className={cn('', className)}>
       <h2
         id="now-title"
         className="text-xs uppercase tracking-widest mb-1 font-mono text-[var(--fg-muted)]"
       >
-        Self Exploration
+        {nowDict.title}
       </h2>
-      <p className="text-xs mb-6 text-[var(--fg-subtle)]">What I&apos;m currently working on</p>
+      <p className="text-xs mb-6 text-[var(--fg-subtle)]">{nowDict.subtitle}</p>
 
       {/* Currently Working On */}
       <div className="p-6 rounded-xl border border-border bg-bg-card mb-4">
-        <h3 className="text-sm font-semibold mb-4 text-[var(--fg)]">Currently Working On</h3>
+        <h3 className="text-sm font-semibold mb-4 text-[var(--fg)]">{nowDict.workingOnHeading}</h3>
         <ul className="space-y-3">
           {NOW_ITEMS.map((item) => (
             <li
@@ -43,7 +45,7 @@ export function NowSection({ className }: NowSectionProps) {
 
       {/* Language */}
       <div className="p-6 rounded-xl border border-border bg-bg-card">
-        <h3 className="text-sm font-semibold mb-4 text-[var(--fg)]">Language</h3>
+        <h3 className="text-sm font-semibold mb-4 text-[var(--fg)]">{nowDict.language.heading}</h3>
         <div className="flex flex-col gap-3">
           {LANGUAGE_ITEMS.map(({ flag, lang, native, level, levelDesc }) => (
             <div key={lang} className="flex items-start justify-between gap-4">

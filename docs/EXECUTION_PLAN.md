@@ -76,7 +76,7 @@ graph LR
 | 1.6 | [x] Setup ESLint + Prettier + eslint-plugin-jsx-a11y | `nextjs-setup` | 15 min | 1.1 | ✅ Done |
 | 1.7 | [x] **Setup Husky + lint-staged** | `dev-tooling` | 15 min | 1.6 | ✅ Done |
 | 1.8 | [x] **Setup Commitlint (@commitlint/config-conventional)** | `dev-tooling` | 10 min | 1.7 | ✅ Done |
-| 1.9 | [x] Setup folder structure (components, lib, content, types) | `nextjs-setup` | 10 min | 1.1 | ✅ Done |
+| 1.9 | [x] Setup folder structure (app, core, features, core/content, types) | `nextjs-setup` | 10 min | 1.1 | ✅ Done |
 | 1.10 | [x] Create base layout (RootLayout, metadata, providers) | `nextjs-setup` | 20 min | 1.2-1.5 | ✅ Done |
 | 1.11 | [x] Setup Framer Motion provider | `animation-system` | 10 min | 1.1 | ✅ Done |
 | 1.12 | [x] **Setup Storybook 8** (init, configure, first story) | `storybook` | 30 min | 1.1, 1.2 | ✅ Done |
@@ -138,9 +138,10 @@ graph LR
 | 3.16 | [x] Remove global Footer on homepage (since prototype has no global footer) | `component-build` | 15 min | 3.8 | ✅ Done |
 | 3.17 | [x] Regression test dark mode and light mode across all homepage sections | `design-system` | 20 min | All above | ✅ Done |
 | 3.18 | [x] Verify all changes with unit tests (`pnpm test`), lint (`pnpm lint`), and build (`pnpm build`) | - | 20 min | 3.13-3.17 | ✅ Done |
+| 3.19 | [x] Refactor Homepage text content into feature-based locale JSON dictionary (`src/features/homepage/locales/en.json`) & `homeData` provider | `design-system` | 30 min | 3.18 | ✅ Done |
 
-**Phase 3 Total: ~8.5 hours (✅ Completed)**  
-**Checkpoint:** Home page 100% pixel-and-style matched with personal_portfolio reference (gap, padding, font typography, card hover effects, theme button, dark mode, no global footer).
+**Phase 3 Total: ~9 hours (✅ Completed)**  
+**Checkpoint:** Home page 100% pixel-and-style matched with personal_portfolio reference (gap, padding, font typography, card hover effects, theme button, dark mode, no global footer, feature-scoped i18n JSON dictionary).
 
 ---
 
@@ -155,7 +156,7 @@ graph LR
 | 4.3 | [x] Blog listing page (/blog) with tag filtering | `blog-system` | 60 min | 4.1 | ✅ Done |
 | 4.4 | [x] Individual blog post page (/blog/[slug]) | `blog-system` | 60 min | 4.1 | ✅ Done |
 | 4.5 | [x] MDX components (code block, callout, image, Vocab card) | `blog-system` | 45 min | 4.4 | ✅ Done |
-| 4.6 | [x] Code syntax highlighting (rehype-pretty-code / Shiki) | `blog-system` | 30 min | 4.5 | ✅ Done |
+| 4.6 | [x] Code syntax highlighting (rehype-pretty-code / Shiki) | `blog-system` | 30 min | 4.6 | ✅ Done |
 | 4.7 | [x] Copy code button | `blog-system` | 15 min | 4.6 | ✅ Done |
 | 4.8 | [x] Reading progress bar | `component-build` | 15 min | 4.4 | ✅ Done |
 | 4.9 | [x] Table of Contents (auto-generated) | `blog-system` | 30 min | 4.4 | ✅ Done |
@@ -163,8 +164,9 @@ graph LR
 | 4.11 | [x] Write 2-3 sample blog posts (frontmatter + content) | - | 60 min | 4.5 | ✅ Done |
 | 4.12 | [x] **Write Storybook stories for blog components** | `storybook` | 15 min | 4.3-4.5 | ✅ Done |
 | 4.13 | [x] Verify: blog listing, post pages, MDX rendering, code blocks | - | 30 min | All above | ✅ Done |
+| 4.14 | [x] Refactor Blogs listing & Blog detail text content into feature-scoped locale JSON dictionaries (`src/features/blogs/locales/en.json`, `src/features/blog/locales/en.json`) | `blog-system` | 30 min | 4.13 | ✅ Done |
 
-**Phase 4 Total: ~7.5 hours (✅ Completed)**  
+**Phase 4 Total: ~8 hours (✅ Completed)**  
 **Checkpoint:** Blog fully functional with sample posts, syntax highlighting, TOC.
 
 ---

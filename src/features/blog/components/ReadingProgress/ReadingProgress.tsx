@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import { BLOG_DICTIONARY } from '../../data/blogData';
 
 export function ReadingProgress() {
   const [progress, setProgress] = useState(0);
@@ -26,7 +27,7 @@ export function ReadingProgress() {
     <div
       className="fixed top-0 left-0 right-0 h-1 z-50 pointer-events-none bg-transparent"
       role="progressbar"
-      aria-label="Article reading progress"
+      aria-label={BLOG_DICTIONARY.readingProgress.ariaLabel}
       aria-valuenow={Math.round(progress)}
       aria-valuemin={0}
       aria-valuemax={100}

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { ExperienceItem } from '../../types';
+import { HOMEPAGE_DICTIONARY } from '../../data/homeData';
 import { Pill } from '@/core/components/ui/Pill/Pill';
 import { cn } from '@/core/lib/cn';
 
@@ -12,6 +13,8 @@ export interface ExperienceCardProps {
 }
 
 export function ExperienceCard({ job, onSelect, className }: ExperienceCardProps) {
+  const cardDict = HOMEPAGE_DICTIONARY.sections.experience.card;
+
   return (
     <button
       type="button"
@@ -22,7 +25,7 @@ export function ExperienceCard({ job, onSelect, className }: ExperienceCardProps
         'transition-all duration-200 hover:-translate-y-0.5 hover:shadow-sm cursor-pointer',
         className
       )}
-      aria-label={`View full details for ${job.role} at ${job.company}`}
+      aria-label={`${cardDict.ariaLabelPrefix} ${job.role} ${cardDict.at} ${job.company}`}
     >
       <div className="flex items-start justify-between mb-1 gap-4">
         <div className="flex items-center gap-2">
@@ -46,7 +49,7 @@ export function ExperienceCard({ job, onSelect, className }: ExperienceCardProps
           ))}
         </div>
         <span className="flex items-center gap-1.5 text-xs font-mono font-medium underline underline-offset-2 flex-shrink-0 text-[var(--fg-muted)] group-hover:gap-2 group-hover:text-[var(--accent)] transition-all duration-200">
-          Full story
+          {cardDict.fullStory}
           <svg
             width="11"
             height="11"
