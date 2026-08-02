@@ -1,0 +1,38 @@
+---
+title: "Design Systems at Scale: What Nobody Tells You"
+description: "Why most design systems fail at adoption, and how to treat your component library as an internal product."
+date: "2026-04-10"
+tags: ["Design Engineering", "frontend"]
+published: true
+featured: false
+---
+
+## Why design systems fail
+
+Building the initial set of components is the easiest part of creating a design system. Anyone can build a Button, an Input, and a Modal in React with Tailwind CSS.
+
+The hard parts come later. Documentation that goes stale. Token naming that made sense in week one and causes arguments in month six. Teams that fork the system rather than contribute to it.
+
+The technical problems are solvable. The organizational ones are where design systems actually fail.
+
+## Tokens are contracts, not variables
+
+When most teams start with design tokens, they treat them like CSS variables — convenient aliases for values. That's fine until you have multiple platforms, multiple themes, or multiple teams consuming the same tokens.
+
+The shift I made was treating tokens as **public API**. Once a token is shipped and consumed, renaming it is a breaking change. Adding it is a minor change. Removing it requires deprecation.
+
+```css
+/* Example: Semantic tokens as public API contracts */
+:root {
+  --bg: #ffffff;
+  --fg: #0f172a;
+  --accent: #00ab6b;
+  --accent-light: rgba(0, 171, 107, 0.1);
+}
+```
+
+## Documentation is code
+
+Storybook is non-negotiable for me now. Not because of the component browser — because Storybook stories are executable documentation. They can be tested, diffed, and verified. Markdown docs rot; stories break loudly when components change.
+
+The pattern I've settled on: every story is also a test. If it renders, the component works. If it renders in every story variant, the component handles its edge cases.

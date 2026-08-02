@@ -141,23 +141,23 @@ graph LR
 
 **Goal:** Full blog dengan MDX, listing, individual posts.
 
-| # | Task | Agent Skill | Estimated | Depends On |
-|---|---|---|---|---|
-| 4.1 | Setup MDX pipeline (next-mdx-remote or contentlayer) | `blog-system` | 45 min | Phase 1 |
-| 4.2 | Create blog content folder structure + sample posts | `blog-system` | 30 min | 4.1 |
-| 4.3 | Blog listing page (/blog) with tag filtering | `blog-system` | 60 min | 4.1 |
-| 4.4 | Individual blog post page (/blog/[slug]) | `blog-system` | 60 min | 4.1 |
-| 4.5 | MDX components (code block, callout, image, Vocab card) | `blog-system` | 45 min | 4.4 |
-| 4.6 | Code syntax highlighting (rehype-pretty-code / Shiki) | `blog-system` | 30 min | 4.5 |
-| 4.7 | Copy code button | `blog-system` | 15 min | 4.6 |
-| 4.8 | Reading progress bar | `component-build` | 15 min | 4.4 |
-| 4.9 | Table of Contents (auto-generated) | `blog-system` | 30 min | 4.4 |
-| 4.10 | RSS feed (/feed.xml) | `seo-system` | 20 min | 4.1 |
-| 4.11 | Write 2-3 sample blog posts (frontmatter + content) | - | 60 min | 4.5 |
-| 4.12 | **Write Storybook stories for blog components** | `storybook` | 15 min | 4.3-4.5 |
-| 4.13 | Verify: blog listing, post pages, MDX rendering, code blocks | - | 30 min | All above |
+| # | Task | Agent Skill | Estimated | Depends On | Status |
+|---|---|---|---|---|---|
+| 4.1 | [x] Setup MDX pipeline (next-mdx-remote or contentlayer) | `blog-system` | 45 min | Phase 1 | ✅ Done |
+| 4.2 | [x] Create blog content folder structure + sample posts | `blog-system` | 30 min | 4.1 | ✅ Done |
+| 4.3 | [x] Blog listing page (/blog) with tag filtering | `blog-system` | 60 min | 4.1 | ✅ Done |
+| 4.4 | [x] Individual blog post page (/blog/[slug]) | `blog-system` | 60 min | 4.1 | ✅ Done |
+| 4.5 | [x] MDX components (code block, callout, image, Vocab card) | `blog-system` | 45 min | 4.4 | ✅ Done |
+| 4.6 | [x] Code syntax highlighting (rehype-pretty-code / Shiki) | `blog-system` | 30 min | 4.5 | ✅ Done |
+| 4.7 | [x] Copy code button | `blog-system` | 15 min | 4.6 | ✅ Done |
+| 4.8 | [x] Reading progress bar | `component-build` | 15 min | 4.4 | ✅ Done |
+| 4.9 | [x] Table of Contents (auto-generated) | `blog-system` | 30 min | 4.4 | ✅ Done |
+| 4.10 | [x] RSS feed (/feed.xml) | `seo-system` | 20 min | 4.1 | ✅ Done |
+| 4.11 | [x] Write 2-3 sample blog posts (frontmatter + content) | - | 60 min | 4.5 | ✅ Done |
+| 4.12 | [x] **Write Storybook stories for blog components** | `storybook` | 15 min | 4.3-4.5 | ✅ Done |
+| 4.13 | [x] Verify: blog listing, post pages, MDX rendering, code blocks | - | 30 min | All above | ✅ Done |
 
-**Phase 4 Total: ~7.5 hours**  
+**Phase 4 Total: ~7.5 hours (✅ Completed)**  
 **Checkpoint:** Blog fully functional with sample posts, syntax highlighting, TOC.
 
 ---

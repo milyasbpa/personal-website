@@ -1,0 +1,59 @@
+---
+title: "What Five Years of TypeScript Taught Me About Type Safety"
+description: "Why most teams use TypeScript wrong, and how to write types that actually prevent bugs instead of adding noise."
+date: "2026-06-24"
+tags: ["frontend", "TypeScript"]
+published: true
+featured: true
+---
+
+## The illusion of type safety
+
+I spent my first two years with TypeScript doing what everyone does: writing `any` when the compiler complained, creating interface hierarchies that mirrored object-oriented Java, and feeling productive because my IDE autocompleted property names.
+
+It took shipping a critical bug to production — one that passed type checking cleanly — to realize that syntactically valid TypeScript and bug-free TypeScript are entirely different things.
+
+<Callout type="tip" title="Core Rule">
+Types should model impossible states out of existence, not just describe data structures.
+</Callout>
+
+## Make impossible states unrepresentable
+
+The most common mistake I see in codebases is using optional properties to represent state transitions. Consider an asynchronous fetch operation:
+
+```ts
+// Bad: allows impossible states like { loading: true, error: "failed" }
+interface RequestState<T> {
+  loading?: boolean;
+  data?: T;
+  error?: string;
+}
+
+// Good: discriminated union enforces valid states
+type AsyncState<T> =
+  | { status: 'idle' }
+  | { status: 'loading' }
+  | { status: 'success'; data: T }
+  | { status: 'error'; error: string };
+```
+
+When you use a discriminated union, TypeScript forces you to check the `status` before accessing `data` or `error`. You literally cannot compile code that tries to render data while in an error state.
+
+## Branded types for primitives
+
+Stringly-typed APIs are another major source of bugs. If a function takes a user ID and a product ID, both strings, nothing stops someone from passing them in the wrong order.
+
+```ts
+type UserId = string & { readonly __brand: unique symbol };
+type ProductId = string & { readonly __brand: unique symbol };
+
+function createUserId(id: string): UserId {
+  return id as UserId;
+}
+
+function purchase(userId: UserId, productId: ProductId) {
+  // Can never swap userId and productId by accident
+}
+```
+
+After five years, my rule is simple: if a type doesn't prevent a bug I've actually seen happen, it doesn't belong in the codebase.

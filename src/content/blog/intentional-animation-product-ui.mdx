@@ -1,0 +1,54 @@
+---
+title: "The Case for Intentional Animation in Product UI"
+description: "Most animations in product interfaces exist because engineers could add them, not because users needed them. Here's how I think about motion with purpose."
+date: "2026-07-12"
+tags: ["Design Engineering", "frontend"]
+published: true
+featured: true
+---
+
+## Why most animations feel wrong
+
+Open any SaaS dashboard built in the last three years and you'll find the same thing: elements fading in on scroll, cards lifting on hover, modals dissolving into view. The animations are smooth. They're technically correct. And they feel completely arbitrary.
+
+The problem isn't the animation itself — it's the absence of intent. When motion doesn't communicate something, it becomes noise. And noise, even beautiful noise, erodes trust in an interface.
+
+I've been thinking about this a lot while working on design systems where animation tokens have to serve dozens of different contexts. What I've landed on is a simple test: **does this motion answer a question the user is already asking?**
+
+<Callout type="note" title="Motion Test">
+If your animation doesn't answer one of the three questions below, it is likely decoration. Decoration belongs in marketing sites, not in tools people use to get work done.
+</Callout>
+
+## The three questions motion can answer
+
+When a user interacts with an interface, they're implicitly asking one of three things:
+
+1. **Where did it go?** — An element disappearing without motion leaves the user disoriented. A quick fade or slide-out confirms the action was received and shows where focus should go next.
+2. **What just happened?** — Feedback animations (button press states, form submission confirmation) close the loop between action and result. Without them, users click twice.
+3. **How do these things relate?** — Shared element transitions between views (a card expanding into a detail page, for example) communicate hierarchy and relationship better than any static layout can.
+
+```tsx
+// Example: purposeful loading state vs. decorative spinner
+// Purposeful — communicates progress, answers "is it working?"
+const ProgressButton = ({ loading, children }) => (
+  <button className={loading ? 'opacity-70 cursor-wait' : ''}>
+    {loading ? <Spinner size={16} /> : children}
+  </button>
+);
+
+// Decorative — adds motion without communicating anything
+const FancyButton = ({ children }) => (
+  <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+    {children}
+  </motion.button>
+);
+```
+
+## Duration and easing are the hard part
+
+Everyone focuses on what animates. Almost nobody thinks carefully about how long it takes.
+
+In my design systems, I enforce three standard motion tokens:
+- `duration-fast`: 150ms for micro-interactions and hover states.
+- `duration-normal`: 250ms for layout shifts and dropdowns.
+- `duration-slow`: 400ms for full page transitions or complex drawers.
