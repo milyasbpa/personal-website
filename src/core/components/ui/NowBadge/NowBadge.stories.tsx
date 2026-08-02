@@ -21,13 +21,13 @@ type Story = StoryObj<typeof NowBadge>;
 export const Default: Story = {
   args: {
     statusText: 'Available for consulting & advisory',
-    href: '/now',
+    href: '/#now',
   },
 };
 
 export const CustomStatus: Story = {
   args: {
     statusText: 'Focusing on Next.js 16 DX @ Vercel',
-    href: '/now',
+    href: '/#now',
   },
 };

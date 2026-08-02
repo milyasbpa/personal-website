@@ -8,7 +8,7 @@ describe('NowBadge component', () => {
     render(<NowBadge />);
     const link = screen.getByRole('link', { name: /available for consulting/i });
     expect(link).toBeInTheDocument();
-    expect(link).toHaveAttribute('href', '/now');
+    expect(link).toHaveAttribute('href', '/#now');
   });
 
   it('renders custom status text and href', () => {

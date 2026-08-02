@@ -60,8 +60,6 @@ bas.
 ├── /blog
 │   ├── /blog/[slug] (Individual post)
 │   └── /blog/tags/[tag] (Tag filter)
-├── /now (What I'm working on, exploring, reading — updated weekly)
-├── /uses (Tools, setup, tech stack — /uses page convention)
 ├── /projects (Coming soon — placeholder, Storybook as first project)
 ├── /resume (Downloadable PDF / View)
 └── /colophon (Tech stack, credits — optional)
@@ -89,33 +87,7 @@ bas.
 | **Content** | MDX-powered, code syntax highlighting, embedded charts |
 | **Categories** | `frontend`, `japanese`, `insights`, `productivity` |
 
-### 3.4 Page — Now (`/now`)
-
-> Inspired by [nownownow.com](https://nownownow.com/) — a page that tells you what a person is focused on right now.
-
-| Feature | Detail |
-|---|---|
-| **Currently Working On** | Brief descriptions of current professional focus (e.g., "Building design systems at [Company]") |
-| **Current Exploration** | What I'm deep-diving into — NOT "learning" (framing for senior) |
-| **🇯🇵 日本語 Progress** | JLPT N5 progress bar — this is personal/hobby, so OK to show as learning |
-| **Activity Heatmap** | GitHub-style contribution grid — shows **consistency**, not "learning" |
-| **Recent Reading** | Books/articles currently reading |
-| **Update Frequency** | Manual/JSON-based, di-update mingguan |
-| **Goal** | Show thought leadership & consistency, NOT "still learning" |
-
-> **⚠️ Framing Rule:** NEVER show progress bars for professional skills (React, TypeScript, etc.) — these are already proven by 5+ years of experience. Only show progress for personal hobbies (日本語) or explicitly exploratory topics.
-
-### 3.5 Page — Uses (`/uses`)
-
-| Feature | Detail |
-|---|---|
-| **Editor & Terminal** | VS Code, extensions, terminal setup |
-| **Dev Tools** | Browsers, design tools, productivity apps |
-| **Hardware** | Laptop, peripherals, desk setup |
-| **Stack** | Preferred tech stack per project type |
-| **Goal** | SEO long-tail keywords, community engagement |
-
-### 3.6 Page — Projects (`/projects`)
+### 3.4 Page — Projects (`/projects`)
 
 > **Note:** Section ini akan diisi nanti. Untuk sementara:
 > - **"bas. Design System"** — Storybook-documented component library dari website ini sendiri (deployed ke URL terpisah)
@@ -134,7 +106,7 @@ bas.
 | F-02 | **Responsive Design** | Mobile-first, breakpoints: 375px, 768px, 1024px, 1440px |
 | F-03 | **Blog System** | MDX content, code highlighting, reading time calc, tag filtering |
 | F-04 | **SEO Optimization** | Meta tags, OG images, structured data, sitemap.xml, robots.txt |
-| F-05 | **Now Page** | Activity heatmap, current focus, 日本語 progress, recent reading |
+| F-05 | **Now Section (Homepage)** | Activity heatmap, current focus, 日本語 progress, recent reading |
 | F-06 | **Contact Form** | Server action atau API route, email notification |
 | F-07 | **Accessibility (a11y)** | WCAG 2.1 AA, keyboard nav, screen reader, skip links, focus management |
 | F-08 | **Scroll Animations** | Intersection Observer / Framer Motion, Apple-like smooth reveals |
@@ -226,7 +198,7 @@ bas.
 | **Tech Insights** | Tool reviews, industry trends, career thoughts | 1x/bulan |
 | **Productivity** | Dev workflow, learning methods, book reviews | 1x/bulan |
 
-### 6.2 Now Page Data
+### 6.2 Now Section Data
 
 ```json
 {
@@ -279,7 +251,7 @@ bas.
 2. **MDX for Blog** — Markdown + JSX untuk interactive blog posts
 3. **CSS Custom Properties** — Design tokens yang work across themes
 4. **Static Generation** — Blog posts di-generate at build time (SSG)
-5. **Incremental Static Regeneration** — Untuk Now page data
+5. **Incremental Static Regeneration** — Untuk Now section data
 6. **Edge Runtime** — Contact form API route untuk global performance
 7. **Husky + lint-staged** — Enforce code quality on every commit
 8. **Commitlint** — Enforce conventional commit messages
@@ -332,7 +304,7 @@ Dark Mode:
 |---|---|---|
 | Lighthouse Score (avg) | ≥ 95 all categories | Lighthouse CI |
 | Blog Posts Published | ≥ 4/month (across all pillars) | Content calendar |
-| Now Page Updated | Weekly | JSON data commits |
+| Now Section Updated | Weekly | JSON data commits |
 | Organic Traffic | ≥ 500 visits/month (6 months) | Vercel Analytics |
 | Contact Form Submissions | ≥ 2/month | Form analytics |
 | Storybook Components Documented | 100% of UI components | Storybook |
@@ -345,14 +317,13 @@ Dark Mode:
 | Phase | Milestone | Duration | Status |
 |---|---|---|---|
 | **Phase 0** | PRD + Design Tokens + Figma Prompt + Agent Skills | 1 day | ✅ Done |
-| **Phase 1** | Next.js Setup + Design System + Dev Tooling (Husky, Commitlint, Storybook) | 3-4 days | ⬜ Planned |
-| **Phase 2** | Layout Components + Navigation + Storybook stories | 3-4 days | ⬜ Planned |
-| **Phase 3** | Home Page (Hero, About, Experience, Now, Contact) | 3-4 days | ⬜ Planned |
-| **Phase 4** | Blog System (MDX, listing, individual posts) | 3-4 days | ⬜ Planned |
-| **Phase 5** | Now Page + Uses Page | 2-3 days | ⬜ Planned |
-| **Phase 6** | Dark Mode, Animations, Polish | 2-3 days | ⬜ Planned |
-| **Phase 7** | SEO, a11y Audit, Performance, Testing | 1-2 days | ⬜ Planned |
-| **Phase 8** | Deploy to Vercel + Final QA | 1 day | ⬜ Planned |
+| **Phase 1** | Next.js Setup + Design System + Dev Tooling (Husky, Commitlint, Storybook) | 3-4 days | ✅ Done |
+| **Phase 2** | Layout Components + Navigation + Storybook stories | 3-4 days | ✅ Done |
+| **Phase 3** | Home Page (Hero, About, Experience, Now, Contact) | 3-4 days | ✅ Done |
+| **Phase 4** | Blog System (MDX, listing, individual posts) | 3-4 days | ✅ Done |
+| **Phase 5** | Dark Mode, Animations, Polish | 2-3 days | ⬜ Planned |
+| **Phase 6** | SEO, a11y Audit, Performance, Testing | 1-2 days | ⬜ Planned |
+| **Phase 7** | Deploy to Vercel + Final QA | 1 day | ⬜ Planned |
 
 **Estimated Total:** 20-28 hari kerja
 

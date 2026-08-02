@@ -357,7 +357,7 @@ Codebase ini mewajibkan **standard kualitas tinggi** sebelum kode masuk ke repos
   * Menggunakan *controls* untuk meliput Light Mode dan Dark Mode.
 * **E2E Tests (Playwright):**
   * Disimpan di folder terpusat `/e2e/` di root proyek.
-  * Menembak seluruh alur navigasi halaman utama (`/`, `/now`, `/writing`, `/uses`, `/contact`).
+  * Menembak seluruh alur navigasi halaman utama (`/`, `/blog`, `/#about`, `/#experience`, `/#now`, `/#contact`).
 
 ### 6.2 Husky Pre-Commit Workflow
 1. Saat menjalankan `git commit`:

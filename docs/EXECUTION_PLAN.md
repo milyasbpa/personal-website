@@ -162,85 +162,63 @@ graph LR
 
 ---
 
-### Phase 5: Now Page + Uses Page
-
-**Goal:** `/now` page (senior-appropriate) dan `/uses` page.
-
-| # | Task | Agent Skill | Estimated | Depends On |
-|---|---|---|---|---|
-| 5.1 | Create Now page data schema (JSON) + sample data | `component-build` | 15 min | - |
-| 5.2 | Create heatmap component (GitHub-style activity grid) | `component-build` | 90 min | Phase 1 |
-| 5.3 | Create "Currently Working On" section | `component-build` | 20 min | Phase 2 |
-| 5.4 | Create 日本語 progress bar (personal hobby framing) | `component-build` | 15 min | Phase 2 |
-| 5.5 | Create "Recent Reading" section | `component-build` | 15 min | Phase 2 |
-| 5.6 | Assemble Now page (/now) | `component-build` | 20 min | 5.1-5.5 |
-| 5.7 | Create Uses page (/uses) — tools, setup, stack | `component-build` | 30 min | Phase 2 |
-| 5.8 | Connect "Now" preview section on home page | `component-build` | 15 min | 5.6, Phase 3 |
-| 5.9 | **Write Storybook stories for Now & Uses components** | `storybook` | 15 min | 5.2-5.5 |
-| 5.10 | Verify: pages render, responsive, data displays correctly | - | 20 min | All above |
-
-**Phase 5 Total: ~4 hours**  
-**Checkpoint:** /now and /uses pages working, heatmap renders, connected to home.
-
----
-
-### Phase 6: Dark Mode, Animations & Polish
+### Phase 5: Dark Mode, Animations & Polish
 
 **Goal:** Final polish on visual quality.
 
 | # | Task | Agent Skill | Estimated | Depends On |
 |---|---|---|---|---|
-| 6.1 | Dark mode visual QA pass (all pages) | `design-system` | 30 min | All |
-| 6.2 | Animation polish (timing, easing, consistency) | `animation-system` | 30 min | All |
-| 6.3 | Mobile responsiveness QA pass | - | 30 min | All |
-| 6.4 | Typography & spacing consistency pass | `design-system` | 20 min | All |
-| 6.5 | Hover state & interaction polish | `animation-system` | 20 min | All |
-| 6.6 | **Storybook: dark mode addon + visual review** | `storybook` | 15 min | 6.1 |
+| 5.1 | Dark mode visual QA pass (all pages) | `design-system` | 30 min | All |
+| 5.2 | Animation polish (timing, easing, consistency) | `animation-system` | 30 min | All |
+| 5.3 | Mobile responsiveness QA pass | - | 30 min | All |
+| 5.4 | Typography & spacing consistency pass | `design-system` | 20 min | All |
+| 5.5 | Hover state & interaction polish | `animation-system` | 20 min | All |
+| 5.6 | **Storybook: dark mode addon + visual review** | `storybook` | 15 min | 5.1 |
 
-**Phase 6 Total: ~2.5 hours**  
+**Phase 5 Total: ~2.5 hours**  
 **Checkpoint:** Both themes polished, animations smooth, responsive perfect.
 
 ---
 
-### Phase 7: SEO, Accessibility, Performance & Testing
+### Phase 6: SEO, Accessibility, Performance & Testing
 
 **Goal:** Production-ready quality standards.
 
 | # | Task | Agent Skill | Estimated | Depends On |
 |---|---|---|---|---|
-| 7.1 | SEO: meta tags, OG images, structured data (JSON-LD) | `seo-system` | 45 min | Phase 3, 4 |
-| 7.2 | SEO: sitemap.xml + robots.txt generation | `seo-system` | 15 min | Phase 1 |
-| 7.3 | SEO: Dynamic OG image generation (@vercel/og) | `seo-system` | 30 min | 7.1 |
-| 7.4 | Accessibility audit: keyboard nav, focus, ARIA labels | `accessibility` | 45 min | All |
-| 7.5 | Accessibility: skip links, heading hierarchy, alt texts | `accessibility` | 20 min | All |
-| 7.6 | Accessibility: reduced motion support | `accessibility` | 15 min | Phase 3 |
-| 7.7 | Performance: Image optimization (next/image, WebP) | - | 20 min | All |
-| 7.8 | Performance: Bundle analysis + code splitting review | - | 20 min | All |
-| 7.9 | i18n: Setup next-intl framework (English only, expandable) | - | 30 min | Phase 1 |
-| 7.10 | **Write unit tests for key utilities & hooks** | `testing` | 30 min | All |
-| 7.11 | **Write E2E tests (Playwright) — critical user flows** | `testing` | 45 min | All |
-| 7.12 | Lighthouse audit + fix issues until score ≥ 95 | - | 45 min | All above |
+| 6.1 | SEO: meta tags, OG images, structured data (JSON-LD) | `seo-system` | 45 min | Phase 3, 4 |
+| 6.2 | SEO: sitemap.xml + robots.txt generation | `seo-system` | 15 min | Phase 1 |
+| 6.3 | SEO: Dynamic OG image generation (@vercel/og) | `seo-system` | 30 min | 6.1 |
+| 6.4 | Accessibility audit: keyboard nav, focus, ARIA labels | `accessibility` | 45 min | All |
+| 6.5 | Accessibility: skip links, heading hierarchy, alt texts | `accessibility` | 20 min | All |
+| 6.6 | Accessibility: reduced motion support | `accessibility` | 15 min | Phase 3 |
+| 6.7 | Performance: Image optimization (next/image, WebP) | - | 20 min | All |
+| 6.8 | Performance: Bundle analysis + code splitting review | - | 20 min | All |
+| 6.9 | i18n: Setup next-intl framework (English only, expandable) | - | 30 min | Phase 1 |
+| 6.10 | **Write unit tests for key utilities & hooks** | `testing` | 30 min | All |
+| 6.11 | **Write E2E tests (Playwright) — critical user flows** | `testing` | 45 min | All |
+| 6.12 | Lighthouse audit + fix issues until score ≥ 95 | - | 45 min | All above |
 
-**Phase 7 Total: ~6 hours**  
+**Phase 6 Total: ~6 hours**  
 **Checkpoint:** Lighthouse ≥ 95, WCAG AA compliant, SEO meta complete, tests passing.
 
 ---
 
-### Phase 8: Deploy & Final QA
+### Phase 7: Deploy & Final QA
 
 **Goal:** Production deployment dan final validation.
 
 | # | Task | Agent Skill | Estimated | Depends On |
 |---|---|---|---|---|
-| 8.1 | Setup Vercel deployment (connect GitHub repo) | - | 15 min | All |
-| 8.2 | Configure Vercel Analytics | - | 10 min | 8.1 |
-| 8.3 | **Deploy Storybook** (Chromatic or Vercel sub-project) | `storybook` | 20 min | 8.1 |
-| 8.4 | Cross-browser testing (Chrome, Firefox, Safari) | - | 20 min | 8.1 |
-| 8.5 | Final build + smoke test on production | - | 15 min | 8.1 |
-| 8.6 | Create README.md for GitHub repo | - | 20 min | All |
-| 8.7 | Submit to Google Search Console | `seo-system` | 10 min | 8.1 |
+| 7.1 | Setup Vercel deployment (connect GitHub repo) | - | 15 min | All |
+| 7.2 | Configure Vercel Analytics | - | 10 min | 7.1 |
+| 7.3 | **Deploy Storybook** (Chromatic or Vercel sub-project) | `storybook` | 20 min | 7.1 |
+| 7.4 | Cross-browser testing (Chrome, Firefox, Safari) | - | 20 min | 7.1 |
+| 7.5 | Final build + smoke test on production | - | 15 min | 7.1 |
+| 7.6 | Create README.md for GitHub repo | - | 20 min | All |
+| 7.7 | Submit to Google Search Console | `seo-system` | 10 min | 7.1 |
 
-**Phase 8 Total: ~2 hours**  
+**Phase 7 Total: ~2 hours**  
 **Checkpoint:** Live on Vercel, Storybook deployed, passing all audits, README complete.
 
 ---
@@ -252,13 +230,12 @@ graph LR
 | Phase 0 | Foundation Documents | 2.5h ✅ |
 | Phase 1 | Project Setup, Design System & Dev Tooling | 5h ✅ |
 | Phase 2 | Layout & Navigation + Storybook | 5.5h ✅ |
-| Phase 3 | Home Page Sections | 6.5h |
-| Phase 4 | Blog System | 7.5h |
-| Phase 5 | Now Page + Uses Page | 4h |
-| Phase 6 | Dark Mode, Animations, Polish | 2.5h |
-| Phase 7 | SEO, a11y, Performance, Testing | 6h |
-| Phase 8 | Deploy & Final QA | 2h |
-| **TOTAL** | | **~41.5 hours** |
+| Phase 3 | Home Page Sections | 6.5h ✅ |
+| Phase 4 | Blog System | 7.5h ✅ |
+| Phase 5 | Dark Mode, Animations, Polish | 2.5h |
+| Phase 6 | SEO, a11y, Performance, Testing | 6h |
+| Phase 7 | Deploy & Final QA | 2h |
+| **TOTAL** | | **~37.5 hours** |
 
 ### Calendar Estimation
 

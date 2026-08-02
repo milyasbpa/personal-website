@@ -8,7 +8,7 @@ export interface NowBadgeProps extends React.AnchorHTMLAttributes<HTMLAnchorElem
 }
 
 export function NowBadge({
-  href = '/now',
+  href = '/#now',
   statusText = 'Available for consulting & advisory',
   className,
   ...props
