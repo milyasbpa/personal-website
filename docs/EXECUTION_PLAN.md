@@ -66,26 +66,26 @@ graph LR
 
 **Goal:** Boilerplate Next.js app dengan design system, dev tooling, dan Storybook terimplementasi.
 
-| # | Task | Agent Skill | Estimated | Depends On |
-|---|---|---|---|---|
-| 1.1 | Initialize Next.js 14+ (App Router, TypeScript, Tailwind, pnpm) | `nextjs-setup` | 15 min | - |
-| 1.2 | Configure Tailwind with design tokens | `design-system` | 30 min | 1.1 |
-| 1.3 | Setup CSS custom properties (tokens) in globals.css | `design-system` | 20 min | 1.1 |
-| 1.4 | Install & configure fonts (Inter, JetBrains Mono via next/font) | `design-system` | 10 min | 1.1 |
-| 1.5 | Setup dark/light mode toggle (data-theme attribute) | `design-system` | 30 min | 1.2, 1.3 |
-| 1.6 | Setup ESLint + Prettier + eslint-plugin-jsx-a11y | `nextjs-setup` | 15 min | 1.1 |
-| 1.7 | **Setup Husky + lint-staged** | `dev-tooling` | 15 min | 1.6 |
-| 1.8 | **Setup Commitlint (@commitlint/config-conventional)** | `dev-tooling` | 10 min | 1.7 |
-| 1.9 | Setup folder structure (components, lib, content, types) | `nextjs-setup` | 10 min | 1.1 |
-| 1.10 | Create base layout (RootLayout, metadata, providers) | `nextjs-setup` | 20 min | 1.2-1.5 |
-| 1.11 | Setup Framer Motion provider | `animation-system` | 10 min | 1.1 |
-| 1.12 | **Setup Storybook 8** (init, configure, first story) | `storybook` | 30 min | 1.1, 1.2 |
-| 1.13 | **Setup Vitest + React Testing Library** | `testing` | 20 min | 1.1 |
-| 1.14 | **Setup MCP configuration** (.mcp.json) | `mcp-setup` | 15 min | 1.1 |
-| 1.15 | Create cn() utility + base UI primitives (Button) | `component-build` | 15 min | 1.2 |
-| 1.16 | Verify: build, lint, test, storybook, theme toggle | - | 20 min | All above |
+| # | Task | Agent Skill | Estimated | Depends On | Status |
+|---|---|---|---|---|---|
+| 1.1 | [x] Initialize Next.js 14+ (App Router, TypeScript, Tailwind, pnpm) | `nextjs-setup` | 15 min | - | ✅ Done |
+| 1.2 | [x] Configure Tailwind with design tokens | `design-system` | 30 min | 1.1 | ✅ Done |
+| 1.3 | [x] Setup CSS custom properties (tokens) in globals.css | `design-system` | 20 min | 1.1 | ✅ Done |
+| 1.4 | [x] Install & configure fonts (Inter, JetBrains Mono via next/font) | `design-system` | 10 min | 1.1 | ✅ Done |
+| 1.5 | [x] Setup dark/light mode toggle (data-theme attribute) | `design-system` | 30 min | 1.2, 1.3 | ✅ Done |
+| 1.6 | [x] Setup ESLint + Prettier + eslint-plugin-jsx-a11y | `nextjs-setup` | 15 min | 1.1 | ✅ Done |
+| 1.7 | [x] **Setup Husky + lint-staged** | `dev-tooling` | 15 min | 1.6 | ✅ Done |
+| 1.8 | [x] **Setup Commitlint (@commitlint/config-conventional)** | `dev-tooling` | 10 min | 1.7 | ✅ Done |
+| 1.9 | [x] Setup folder structure (components, lib, content, types) | `nextjs-setup` | 10 min | 1.1 | ✅ Done |
+| 1.10 | [x] Create base layout (RootLayout, metadata, providers) | `nextjs-setup` | 20 min | 1.2-1.5 | ✅ Done |
+| 1.11 | [x] Setup Framer Motion provider | `animation-system` | 10 min | 1.1 | ✅ Done |
+| 1.12 | [x] **Setup Storybook 8** (init, configure, first story) | `storybook` | 30 min | 1.1, 1.2 | ✅ Done |
+| 1.13 | [x] **Setup Vitest + React Testing Library** | `testing` | 20 min | 1.1 | ✅ Done |
+| 1.14 | [x] **Setup MCP configuration** (.mcp.json) | `mcp-setup` | 15 min | 1.1 | ✅ Done |
+| 1.15 | [x] Create cn() utility + base UI primitives (Button) | `component-build` | 15 min | 1.2 | ✅ Done |
+| 1.16 | [x] Verify: build, lint, test, storybook, theme toggle | - | 20 min | All above | ✅ Done |
 
-**Phase 1 Total: ~5 hours**  
+**Phase 1 Total: ~5 hours (✅ Completed)**  
 **Checkpoint:** App builds, theme toggle works, Husky hooks active, Storybook runs, first test passes.
 
 ---
@@ -94,22 +94,23 @@ graph LR
 
 **Goal:** Global layout (sidebar + content split), navigasi, dan Storybook stories.
 
-| # | Task | Agent Skill | Estimated | Depends On |
-|---|---|---|---|---|
-| 2.1 | Create Glass Navbar component (desktop capsule) | `component-build` | 45 min | Phase 1 |
-| 2.2 | Create Mobile Navigation (hamburger + overlay) | `component-build` | 45 min | 2.1 |
-| 2.3 | Create Sidebar layout (Brittany Chiang style, sticky) | `component-build` | 30 min | Phase 1 |
-| 2.4 | Create Split Layout wrapper (sidebar + content) | `component-build` | 20 min | 2.3 |
-| 2.5 | Create Footer component | `component-build` | 15 min | Phase 1 |
-| 2.6 | Create active section indicator (IntersectionObserver) | `animation-system` | 30 min | 2.1, 2.3 |
-| 2.7 | Create Skip-to-content link (a11y) | `accessibility` | 10 min | Phase 1 |
-| 2.8 | Create Theme Toggle component (Sun/Moon icon) | `component-build` | 20 min | Phase 1 |
-| 2.9 | Create UI primitives: Badge, Card, Input, Pill | `component-build` | 30 min | Phase 1 |
-| 2.10 | **Write Storybook stories for all layout components** | `storybook` | 30 min | 2.1-2.9 |
-| 2.11 | **Write unit tests for UI primitives** | `testing` | 20 min | 2.9 |
-| 2.12 | Verify: responsive layout, nav works, a11y keyboard nav, Storybook | - | 20 min | All above |
+| # | Task | Agent Skill | Estimated | Depends On | Status |
+|---|---|---|---|---|---|
+| 2.1 | [x] Create Glass Navbar component (desktop capsule) | `component-build` | 45 min | Phase 1 | ✅ Done |
+| 2.2 | [x] Create Mobile Navigation (drawer + overlay in GlassNavbar) | `component-build` | 45 min | 2.1 | ✅ Done |
+| 2.3 | [x] Integrate global header & footer in Root Layout (`src/app/layout.tsx`) | `component-build` | 30 min | Phase 1 | ✅ Done |
+| 2.4 | [x] Create Theme Toggle component (Sun/Moon icon in `src/core/components/ui/`) | `component-build` | 20 min | Phase 1 | ✅ Done |
+| 2.5 | [x] Create Footer component (`src/core/components/layout/Footer`) | `component-build` | 15 min | Phase 1 | ✅ Done |
+| 2.6 | [x] Create Skip-to-content link (a11y in GlassNavbar) | `accessibility` | 10 min | Phase 1 | ✅ Done |
+| 2.7 | [x] Create UI primitive: Badge (`src/core/components/ui/Badge`) | `component-build` | 20 min | Phase 1 | ✅ Done |
+| 2.8 | [x] Create UI primitive: Card (`src/core/components/ui/Card`) | `component-build` | 20 min | Phase 1 | ✅ Done |
+| 2.9 | [x] Create UI primitive: Pill (`src/core/components/ui/Pill`) | `component-build` | 20 min | Phase 1 | ✅ Done |
+| 2.10 | [x] Create UI primitive: NowBadge (`src/core/components/ui/NowBadge`) | `component-build` | 20 min | Phase 1 | ✅ Done |
+| 2.11 | [x] **Write Storybook stories for all layout & UI primitive components** | `storybook` | 30 min | 2.1-2.10 | ✅ Done |
+| 2.12 | [x] **Write Vitest unit tests for all layout & UI primitive components** | `testing` | 20 min | 2.1-2.10 | ✅ Done |
+| 2.13 | [x] Verify: responsive layout, nav works, a11y keyboard nav, Storybook, 100% test pass | - | 20 min | All above | ✅ Done |
 
-**Phase 2 Total: ~5.5 hours**  
+**Phase 2 Total: ~5.5 hours (✅ Completed)**  
 **Checkpoint:** Full responsive layout, navigation, theme toggle, all components in Storybook.
 
 ---
@@ -249,8 +250,8 @@ graph LR
 | Phase | Description | Estimated Hours |
 |---|---|---|
 | Phase 0 | Foundation Documents | 2.5h ✅ |
-| Phase 1 | Project Setup, Design System & Dev Tooling | 5h |
-| Phase 2 | Layout & Navigation + Storybook | 5.5h |
+| Phase 1 | Project Setup, Design System & Dev Tooling | 5h ✅ |
+| Phase 2 | Layout & Navigation + Storybook | 5.5h ✅ |
 | Phase 3 | Home Page Sections | 6.5h |
 | Phase 4 | Blog System | 7.5h |
 | Phase 5 | Now Page + Uses Page | 4h |
