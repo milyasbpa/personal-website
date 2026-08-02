@@ -3,7 +3,6 @@ import { Inter, JetBrains_Mono } from 'next/font/google';
 import '@core/styles/index.css';
 import { ThemeProvider } from '@core/providers/ThemeProvider';
 import { GlassNavbar } from '@core/components/layout/Navbar/GlassNavbar';
-import { Footer } from '@core/components/layout/Footer/Footer';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -38,8 +37,8 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-bg text-fg-body transition-colors duration-250">
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="light"
+          enableSystem={false}
           disableTransitionOnChange
         >
           <div className="flex flex-col min-h-screen">
@@ -47,7 +46,6 @@ export default function RootLayout({
             <main id="main-content" className="flex-1">
               {children}
             </main>
-            <Footer />
           </div>
         </ThemeProvider>
       </body>

@@ -11,7 +11,7 @@ export interface AboutSectionProps {
 
 export function AboutSection({ className }: AboutSectionProps) {
   return (
-    <section id="about" aria-labelledby="about-title" className={cn('py-12 md:py-16', className)}>
+    <section id="about" aria-labelledby="about-title" className={cn('', className)}>
       <h2
         id="about-title"
         className="text-xs uppercase tracking-widest mb-6 font-mono text-[var(--fg-muted)]"
@@ -39,6 +39,7 @@ export function AboutSection({ className }: AboutSectionProps) {
           <Pill
             key={tech}
             variant="accent"
+            size="md"
             className="cursor-default"
           >
             {tech}

@@ -17,7 +17,7 @@ export function HeatmapGrid({ className }: HeatmapGridProps) {
   return (
     <div
       className={cn(
-        'p-6 rounded-xl border border-[var(--border)] bg-[var(--bg-card)]',
+        'p-6 rounded-xl border border-border bg-bg-card',
         className
       )}
       data-testid="heatmap-grid"

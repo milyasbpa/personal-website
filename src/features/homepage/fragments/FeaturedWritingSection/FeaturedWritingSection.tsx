@@ -12,7 +12,7 @@ export interface FeaturedWritingSectionProps {
 
 export function FeaturedWritingSection({ className }: FeaturedWritingSectionProps) {
   return (
-    <section id="writing" aria-labelledby="writing-title" className={cn('py-12 md:py-16', className)}>
+    <section id="writing" aria-labelledby="writing-title" className={cn('', className)}>
       <h2
         id="writing-title"
         className="text-xs uppercase tracking-widest mb-6 font-mono text-[var(--fg-muted)]"
@@ -25,7 +25,7 @@ export function FeaturedWritingSection({ className }: FeaturedWritingSectionProp
         ))}
       </div>
       <Link
-        href="/writing"
+        href="/blog"
         className={cn(
           'inline-flex items-center gap-1.5 text-sm font-medium mt-5 text-[var(--accent)]',
           'hover:gap-2.5 transition-all duration-200'

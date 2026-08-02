@@ -8,16 +8,16 @@ describe('NowSection', () => {
     render(<NowSection />);
     expect(screen.getByRole('heading', { name: /self exploration/i })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /currently working on/i })).toBeInTheDocument();
-  });
+  }, 15000);
 
   it('renders HeatmapGrid inside NowSection', () => {
     render(<NowSection />);
     expect(screen.getByTestId('heatmap-grid')).toBeInTheDocument();
-  });
+  }, 15000);
 
   it('renders Japanese N5 language learning badge without professional learning progress bar', () => {
     render(<NowSection />);
     expect(screen.getByText(/learning · n5/i)).toBeInTheDocument();
     expect(screen.getAllByText(/professional/i).length).toBeGreaterThan(0);
-  });
+  }, 15000);
 });

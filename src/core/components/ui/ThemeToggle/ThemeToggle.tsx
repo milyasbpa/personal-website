@@ -2,7 +2,7 @@
 
 import React, { useSyncExternalStore } from 'react';
 import { useTheme } from 'next-themes';
-import { Sun, Moon } from 'lucide-react';
+import { cn } from '@core/lib/cn';
 
 export interface ThemeToggleProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -24,11 +24,15 @@ export function ThemeToggle({ className = '', ...props }: ThemeToggleProps) {
       <button
         type="button"
         aria-label="Toggle theme"
-        className={`w-10 h-10 rounded-full border border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md flex items-center justify-center text-zinc-600 dark:text-zinc-400 opacity-50 ${className}`}
+        className={cn(
+          'w-8 h-8 flex items-center justify-center rounded-full border border-[var(--border)]',
+          'bg-[var(--bg-card)] text-[var(--fg-muted)] opacity-50',
+          className
+        )}
         disabled
         {...props}
       >
-        <div className="w-5 h-5" />
+        <div className="w-4 h-4" />
       </button>
     );
   }
@@ -44,13 +48,47 @@ export function ThemeToggle({ className = '', ...props }: ThemeToggleProps) {
       type="button"
       onClick={toggleTheme}
       aria-label="Toggle theme"
-      className={`w-10 h-10 rounded-full border border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md flex items-center justify-center text-zinc-700 dark:text-zinc-300 hover:text-[#00AB6B] dark:hover:text-[#00BF71] hover:border-[#00AB6B]/50 dark:hover:border-[#00BF71]/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00AB6B] dark:focus-visible:ring-[#00BF71] transition-all duration-200 ${className}`}
+      className={cn(
+        'w-8 h-8 flex items-center justify-center rounded-full border border-[var(--border)]',
+        'bg-[var(--bg-card)] text-[var(--fg-muted)]',
+        'transition-all duration-200 hover:scale-105 hover:border-[var(--accent)] hover:text-[var(--accent)]',
+        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]',
+        className
+      )}
       {...props}
     >
       {isDark ? (
-        <Sun className="w-5 h-5 transition-transform duration-200 hover:rotate-45" />
+        <svg
+          width="15"
+          height="15"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="4" />
+          <path
+            strokeLinecap="round"
+            d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32 1.41-1.41"
+          />
+        </svg>
       ) : (
-        <Moon className="w-5 h-5 transition-transform duration-200 hover:-rotate-12" />
+        <svg
+          width="15"
+          height="15"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
+          />
+        </svg>
       )}
     </button>
   );

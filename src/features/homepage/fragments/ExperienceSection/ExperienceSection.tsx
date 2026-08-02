@@ -34,7 +34,7 @@ export function ExperienceSection({ className }: ExperienceSectionProps) {
     <section
       id="experience"
       aria-labelledby="experience-title"
-      className={cn('py-12 md:py-16', className)}
+      className={cn('', className)}
     >
       <h2
         id="experience-title"

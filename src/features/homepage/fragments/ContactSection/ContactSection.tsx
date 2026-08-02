@@ -10,7 +10,7 @@ export interface ContactSectionProps {
 
 export function ContactSection({ className }: ContactSectionProps) {
   return (
-    <section id="contact" aria-labelledby="contact-title" className={cn('py-12 md:py-16', className)}>
+    <section id="contact" aria-labelledby="contact-title" className={cn('', className)}>
       <h2
         id="contact-title"
         className="text-xs uppercase tracking-widest mb-1 font-mono text-[var(--fg-muted)]"
@@ -18,7 +18,7 @@ export function ContactSection({ className }: ContactSectionProps) {
         Contact
       </h2>
       <p className="text-xs mb-6 text-[var(--fg-subtle)]">
-        Get in touch — I&apos;d love to hear from you
+        Have a question or want to work together? Leave a message.
       </p>
       <ContactForm />
     </section>

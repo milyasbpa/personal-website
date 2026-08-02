@@ -16,6 +16,6 @@ describe('FeaturedWritingSection', () => {
   it('renders view all writing link', () => {
     render(<FeaturedWritingSection />);
     const link = screen.getByRole('link', { name: /view all writing/i });
-    expect(link).toHaveAttribute('href', '/writing');
+    expect(link).toHaveAttribute('href', '/blog');
   });
 });

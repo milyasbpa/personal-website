@@ -115,9 +115,9 @@ graph LR
 
 ---
 
-### Phase 3: Home Page Sections
+### Phase 3: Home Page Sections & 2-Column Layout Alignment
 
-**Goal:** Semua section di halaman utama.
+**Goal:** Semua section di halaman utama dengan arsitektur 2-kolom sticky sidebar (sesuai referensi `personal_portfolio`).
 
 | # | Task | Agent Skill | Estimated | Depends On | Status |
 |---|---|---|---|---|---|
@@ -128,12 +128,19 @@ graph LR
 | 3.5 | [x] Now preview section (current focus + heatmap mini) | `component-build` | 45 min | Phase 2 | ✅ Done |
 | 3.6 | [x] Contact section (form + validation) | `component-build` | 45 min | Phase 2 | ✅ Done |
 | 3.7 | [x] Contact form API route (server action / client simulation) | `nextjs-setup` | 30 min | 3.6 | ✅ Done |
-| 3.8 | [x] Add scroll animations (Framer Motion) to all sections | `animation-system` | 45 min | 3.1-3.6 | ✅ Done |
-| 3.9 | [x] **Write Storybook stories for section components** | `storybook` | 20 min | 3.1-3.6 | ✅ Done |
-| 3.10 | [x] Verify: all sections render, responsive, animations smooth | - | 30 min | All above | ✅ Done |
+| 3.8 | [x] Align 2-Column Desktop Layout (Left sticky sidebar navigation + Right scrollable content) | `design-system` | 45 min | 3.1-3.6 | ✅ Done |
+| 3.9 | [x] Align Navbar/Header (Desktop top right theme toggle only; Mobile sticky header + menu drawer) | `component-build` | 30 min | 3.8 | ✅ Done |
+| 3.10 | [x] Configure Default Theme to Light Mode (`defaultTheme="light"`) | `design-system` | 15 min | Phase 1 | ✅ Done |
+| 3.11 | [x] **Write Storybook stories for section & layout components** | `storybook` | 20 min | 3.1-3.10 | ✅ Done |
+| 3.13 | [x] Audit & match exact gap, padding, typography (font weight, size, family) with `personal_portfolio` | `design-system` | 45 min | 3.8 | ✅ Done |
+| 3.14 | [x] Match exact card hover effects for Experience, Featured Writing, and other homepage cards | `component-build` | 30 min | 3.8 | ✅ Done |
+| 3.15 | [x] Match exact theme toggle button styling in navbar for light mode and dark mode | `design-system` | 20 min | 3.9 | ✅ Done |
+| 3.16 | [x] Remove global Footer on homepage (since prototype has no global footer) | `component-build` | 15 min | 3.8 | ✅ Done |
+| 3.17 | [x] Regression test dark mode and light mode across all homepage sections | `design-system` | 20 min | All above | ✅ Done |
+| 3.18 | [x] Verify all changes with unit tests (`pnpm test`), lint (`pnpm lint`), and build (`pnpm build`) | - | 20 min | 3.13-3.17 | ✅ Done |
 
-**Phase 3 Total: ~6.5 hours (✅ Completed)**  
-**Checkpoint:** Home page complete with all sections, animations, responsive.
+**Phase 3 Total: ~8.5 hours (✅ Completed)**  
+**Checkpoint:** Home page 100% pixel-and-style matched with personal_portfolio reference (gap, padding, font typography, card hover effects, theme button, dark mode, no global footer).
 
 ---
 
@@ -230,7 +237,7 @@ graph LR
 | Phase 0 | Foundation Documents | 2.5h ✅ |
 | Phase 1 | Project Setup, Design System & Dev Tooling | 5h ✅ |
 | Phase 2 | Layout & Navigation + Storybook | 5.5h ✅ |
-| Phase 3 | Home Page Sections | 6.5h ✅ |
+| Phase 3 | Home Page Sections & 2-Column Layout Alignment | 8.5h ✅ |
 | Phase 4 | Blog System | 7.5h ✅ |
 | Phase 5 | Dark Mode, Animations, Polish | 2.5h |
 | Phase 6 | SEO, a11y, Performance, Testing | 6h |

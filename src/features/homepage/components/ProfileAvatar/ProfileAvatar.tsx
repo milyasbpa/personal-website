@@ -21,7 +21,7 @@ export function ProfileAvatar({
 }: ProfileAvatarProps) {
   const sizeStyles = {
     sm: 'w-12 h-12',
-    md: 'w-16 h-16',
+    md: 'w-[72px] h-[72px]',
     lg: 'w-20 h-20',
   };
 

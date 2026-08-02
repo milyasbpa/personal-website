@@ -5,19 +5,19 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@core/lib/cn';
 import { ThemeToggle } from '@core/components/ui/ThemeToggle/ThemeToggle';
-import { NowBadge } from '@core/components/ui/NowBadge/NowBadge';
 
 export interface NavItem {
+  id: string;
   label: string;
   href: string;
 }
 
-const NAV_ITEMS: NavItem[] = [
-  { label: 'About', href: '/#about' },
-  { label: 'Experience', href: '/#experience' },
-  { label: 'Writing', href: '/blog' },
-  { label: 'Now', href: '/#now' },
-  { label: 'Contact', href: '/#contact' },
+export const NAV_ITEMS: NavItem[] = [
+  { id: 'about', label: 'About', href: '/#about' },
+  { id: 'experience', label: 'Experience', href: '/#experience' },
+  { id: 'writing', label: 'Writing', href: '/#writing' },
+  { id: 'now', label: 'Self Exploration', href: '/#now' },
+  { id: 'contact', label: 'Contact', href: '/#contact' },
 ];
 
 export function GlassNavbar() {
@@ -33,12 +33,34 @@ export function GlassNavbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 16);
+      setScrolled(window.scrollY > 8);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
+  const handleNavClick = (id: string) => {
+    setMobileMenuOpen(false);
+    if (pathname === '/') {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+    }
+  };
 
   return (
     <>
@@ -50,111 +72,76 @@ export function GlassNavbar() {
         Skip to main content
       </a>
 
-      <header
+      {/* ── DESKTOP HEADER (minimalist theme toggle only, matching prototype) ── */}
+      <div
         className={cn(
-          'sticky top-0 z-50 w-full transition-all duration-300',
-          scrolled
-            ? 'py-3 bg-white/75 dark:bg-zinc-950/75 backdrop-blur-md border-b border-zinc-200/80 dark:border-zinc-800/80 shadow-sm'
-            : 'py-5 bg-transparent border-b border-transparent'
+          'hidden lg:flex items-center justify-end sticky top-0 z-30 w-full h-14 bg-bg transition-shadow duration-200',
+          scrolled ? 'shadow-sm' : ''
         )}
       >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
-          {/* Logo bas. */}
-          <Link
-            href="/"
-            className="group flex items-center font-mono font-bold text-xl tracking-tight text-zinc-900 dark:text-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00AB6B] dark:focus-visible:ring-[#00BF71] rounded-md px-1 py-0.5"
-            aria-label="bas. home"
-          >
-            <span>bas</span>
-            <span className="text-[#00AB6B] dark:text-[#00BF71] font-extrabold group-hover:scale-125 transition-transform inline-block">
-              .
-            </span>
-          </Link>
-
-          {/* Desktop Navigation Links (Capsule) */}
-          <nav
-            aria-label="Main Navigation"
-            className="hidden md:flex items-center gap-1 px-4 py-1.5 rounded-full border border-zinc-200/80 dark:border-zinc-800/80 bg-white/60 dark:bg-zinc-900/60 backdrop-blur-md shadow-xs"
-          >
-            {NAV_ITEMS.map((item) => {
-              const isActive =
-                pathname === item.href ||
-                (item.href !== '/' && pathname?.startsWith(item.href));
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={cn(
-                    'px-3.5 py-1.5 text-sm font-medium rounded-full transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00AB6B] dark:focus-visible:ring-[#00BF71]',
-                    isActive
-                      ? 'text-[#00AB6B] dark:text-[#00BF71] bg-[#00AB6B]/10 dark:bg-[#00BF71]/10 font-semibold'
-                      : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100/80 dark:hover:bg-zinc-800/60'
-                  )}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-          </nav>
-
-          {/* Right Actions: NowBadge + ThemeToggle + Mobile Hamburger */}
-          <div className="flex items-center gap-2.5">
-            <div className="hidden lg:block">
-              <NowBadge />
-            </div>
-            <ThemeToggle />
-            <button
-              type="button"
-              onClick={() => setMobileMenuOpen((prev) => !prev)}
-              aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-              aria-expanded={mobileMenuOpen}
-              className="md:hidden inline-flex items-center justify-center p-2 rounded-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00AB6B] dark:focus-visible:ring-[#00BF71] transition-colors"
-            >
-              <div className="w-5 h-5 flex flex-col justify-center gap-1">
-                <span
-                  className={cn(
-                    'block h-0.5 w-full bg-current transform transition duration-300 ease-in-out',
-                    mobileMenuOpen && 'rotate-45 translate-y-1.5'
-                  )}
-                />
-                <span
-                  className={cn(
-                    'block h-0.5 w-full bg-current transition duration-300 ease-in-out',
-                    mobileMenuOpen && 'opacity-0'
-                  )}
-                />
-                <span
-                  className={cn(
-                    'block h-0.5 w-full bg-current transform transition duration-300 ease-in-out',
-                    mobileMenuOpen && '-rotate-45 -translate-y-1.5'
-                  )}
-                />
-              </div>
-            </button>
-          </div>
+        <div className="w-full max-w-5xl mx-auto px-8 flex justify-end">
+          <ThemeToggle />
         </div>
+      </div>
 
-        {/* Mobile Navigation Drawer */}
-        {mobileMenuOpen && (
-          <div className="md:hidden border-t border-zinc-200 dark:border-zinc-800 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-xl px-4 pt-4 pb-6 mt-3 space-y-3">
-            <nav aria-label="Mobile Navigation" className="flex flex-col gap-1">
-              {NAV_ITEMS.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="px-4 py-2.5 text-base font-medium rounded-lg text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900 hover:text-[#00AB6B] dark:hover:text-[#00BF71] transition-colors"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
-            <div className="pt-2 border-t border-zinc-200 dark:border-zinc-800 flex justify-center">
-              <NowBadge />
-            </div>
-          </div>
-        )}
+      {/* ── MOBILE HEADER ── */}
+      <header
+        className="lg:hidden sticky top-0 z-50 bg-bg/90 backdrop-blur-md border-b border-border px-6 py-4 flex items-center justify-between"
+      >
+        <Link
+          href="/"
+          className="font-mono font-bold text-xl tracking-tight text-[#00AB6B] dark:text-[#00BF71] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00AB6B] rounded-md"
+          aria-label="bas. home"
+        >
+          bas.
+        </Link>
+
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen((prev) => !prev)}
+            aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={mobileMenuOpen}
+            className="w-9 h-9 flex flex-col gap-1.5 items-center justify-center rounded-lg text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00AB6B] transition-colors"
+          >
+            <span
+              className={cn(
+                'block w-5 h-0.5 bg-fg transition-all duration-200',
+                mobileMenuOpen && 'rotate-45 translate-y-2'
+              )}
+            />
+            <span
+              className={cn(
+                'block w-5 h-0.5 bg-fg transition-all duration-200',
+                mobileMenuOpen && 'opacity-0'
+              )}
+            />
+            <span
+              className={cn(
+                'block w-5 h-0.5 bg-fg transition-all duration-200',
+                mobileMenuOpen && '-rotate-45 -translate-y-2'
+              )}
+            />
+          </button>
+        </div>
       </header>
+
+      {/* ── MOBILE FULLSCREEN OVERLAY MENU ── */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden fixed inset-0 z-40 bg-bg flex flex-col items-center justify-center gap-8">
+          {NAV_ITEMS.map(({ id, label, href }) => (
+            <Link
+              key={id}
+              href={href}
+              onClick={() => handleNavClick(id)}
+              className="text-2xl font-medium text-fg hover:text-[#00AB6B] dark:hover:text-[#00BF71] transition-colors"
+            >
+              {label}
+            </Link>
+          ))}
+        </div>
+      )}
     </>
   );
 }

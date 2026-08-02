@@ -3,7 +3,6 @@
 import React from 'react';
 import { NOW_ITEMS, LANGUAGE_ITEMS } from '../../data/homeData';
 import { HeatmapGrid } from '../../components/HeatmapGrid/HeatmapGrid';
-import { Pill } from '@/core/components/ui/Pill/Pill';
 import { cn } from '@/core/lib/cn';
 
 export interface NowSectionProps {
@@ -12,7 +11,7 @@ export interface NowSectionProps {
 
 export function NowSection({ className }: NowSectionProps) {
   return (
-    <section id="now" aria-labelledby="now-title" className={cn('py-12 md:py-16', className)}>
+    <section id="now" aria-labelledby="now-title" className={cn('', className)}>
       <h2
         id="now-title"
         className="text-xs uppercase tracking-widest mb-1 font-mono text-[var(--fg-muted)]"
@@ -22,7 +21,7 @@ export function NowSection({ className }: NowSectionProps) {
       <p className="text-xs mb-6 text-[var(--fg-subtle)]">What I&apos;m currently working on</p>
 
       {/* Currently Working On */}
-      <div className="p-6 rounded-xl border border-[var(--border)] bg-[var(--bg-card)] mb-4">
+      <div className="p-6 rounded-xl border border-border bg-bg-card mb-4">
         <h3 className="text-sm font-semibold mb-4 text-[var(--fg)]">Currently Working On</h3>
         <ul className="space-y-3">
           {NOW_ITEMS.map((item) => (
@@ -43,7 +42,7 @@ export function NowSection({ className }: NowSectionProps) {
       </div>
 
       {/* Language */}
-      <div className="p-6 rounded-xl border border-[var(--border)] bg-[var(--bg-card)]">
+      <div className="p-6 rounded-xl border border-border bg-bg-card">
         <h3 className="text-sm font-semibold mb-4 text-[var(--fg)]">Language</h3>
         <div className="flex flex-col gap-3">
           {LANGUAGE_ITEMS.map(({ flag, lang, native, level, levelDesc }) => (
@@ -64,12 +63,9 @@ export function NowSection({ className }: NowSectionProps) {
                   <p className="text-xs mt-1 text-[var(--fg-subtle)]">{levelDesc}</p>
                 </div>
               </div>
-              <Pill
-                variant="accent"
-                className="flex-shrink-0"
-              >
+              <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-full border border-[var(--accent-border)] bg-[var(--accent-light)] text-[var(--accent)] flex-shrink-0">
                 {level}
-              </Pill>
+              </span>
             </div>
           ))}
         </div>

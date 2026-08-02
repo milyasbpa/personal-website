@@ -16,8 +16,8 @@ export function FeaturedPostCard({ post, className }: FeaturedPostCardProps) {
     <Link
       href={`/writing/${post.slug}`}
       className={cn(
-        'group p-6 rounded-xl border border-[var(--border)] bg-[var(--bg-card)]',
-        'hover:border-[var(--accent-border)] hover:bg-[var(--bg-hover)]',
+        'group p-6 rounded-xl border border-border bg-bg-card',
+        'hover:border-accent-border hover:bg-bg-hover',
         'transition-all duration-200 hover:-translate-y-0.5 hover:shadow-sm flex items-start justify-between gap-4',
         className
       )}

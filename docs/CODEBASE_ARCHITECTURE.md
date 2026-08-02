@@ -60,7 +60,7 @@ src/
 └── features/                   # [FEATURE-SCOPED LAYER] Exactly 3 features (1 per page in prototype)
     ├── homepage/               # Feature 1: Homepage (/, includes Hero, About, Experience, Now, Contact)
     │   ├── container/
-    │   │   └── HomepageContainer.tsx
+    │   │   └── HomepageContainer.tsx  # 2-column layout: 46% sticky left sidebar nav, 54% scrollable content
     │   ├── fragments/          # Each fragment in its own folder (.tsx, .test.tsx, .stories.tsx)
     │   │   ├── HeroSection/    # HeroSection.tsx, HeroSection.test.tsx, HeroSection.stories.tsx
     │   │   ├── AboutSection/   # AboutSection.tsx, AboutSection.test.tsx, AboutSection.stories.tsx

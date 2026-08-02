@@ -59,7 +59,7 @@ export function ContactForm({ onSubmitSuccess, className }: ContactFormProps) {
   return (
     <form
       onSubmit={handleSubmit}
-      className={cn('p-6 rounded-xl border border-[var(--border)] bg-[var(--bg-card)] space-y-4', className)}
+      className={cn('p-6 rounded-xl border border-border bg-bg-card space-y-4', className)}
       data-testid="contact-form"
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

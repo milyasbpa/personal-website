@@ -17,8 +17,8 @@ export function ExperienceCard({ job, onSelect, className }: ExperienceCardProps
       type="button"
       onClick={() => onSelect?.(job)}
       className={cn(
-        'group w-full text-left p-6 rounded-xl border border-[var(--border)] bg-[var(--bg-card)]',
-        'hover:border-[var(--accent-border)] hover:bg-[var(--bg-hover)]',
+        'group w-full text-left p-6 rounded-xl border border-border bg-bg-card',
+        'hover:border-accent-border hover:bg-bg-hover',
         'transition-all duration-200 hover:-translate-y-0.5 hover:shadow-sm cursor-pointer',
         className
       )}

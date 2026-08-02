@@ -69,7 +69,7 @@ bas.
 
 | # | Section | Description |
 |---|---|---|
-| 1 | **Navigation** | Floating glass navbar capsule (sticky, backdrop-blur) |
+| 1 | **Navigation & Layout** | 2-Column desktop layout (46% sticky left sidebar navigation, 54% scrollable content). Minimalist top header on desktop (ThemeToggle only), sticky responsive header + fullscreen drawer on mobile. Light mode default. |
 | 2 | **Hero** | B&W photo, nama, title, status badge, CTA buttons |
 | 3 | **About** | Brief bio, personal touch (belajar 日本語), tech stack pills |
 | 4 | **Experience** | Timeline vertikal, perusahaan, role, tech pills |

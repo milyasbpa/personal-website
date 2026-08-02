@@ -14,6 +14,12 @@
 10. **Write tests for utilities and hooks** — All files in `src/core/lib/`, `src/core/hooks/`, and `src/features/**/hooks/` must have test coverage.
 11. **Modular Feature Architecture (`src/core`, `src/features`, `src/app`)** — Follow `docs/CODEBASE_ARCHITECTURE.md`. Global layout (`Navbar.tsx`, `Footer.tsx`) and global hooks (`useTheme.ts`) MUST reside in `src/core/`, never in `src/app/` or `src/features/`. Container components (`container/`) must NOT prop-drill.
 12. **Prototype Reference (`Personal Portfolio/`)** — Use `Personal Portfolio/src/` as the visual and copywriting reference source when building components, refactoring monolithic files into clean modular features.
+13. **Strict 1:1 Prototype Visual & Layout Accuracy** — When building or refactoring components from `personal_portfolio` reference, strictly verify:
+    - **Section vertical gaps**: Do NOT add arbitrary `py-12 md:py-16` padding if sections rely on container `flex flex-col gap-14`.
+    - **Profile avatar dimensions**: Standard `md` avatar size in sticky sidebar is `w-[72px] h-[72px]`.
+    - **Card container hover classes**: Use Tailwind v4 theme utility classes `border-border bg-bg-card hover:border-accent-border hover:bg-bg-hover` to avoid inline-style specificity overrides.
+    - **Navigation hover interactions**: Ensure hover states explicitly trigger text color changes (`group-hover:text-[var(--fg)]`), sublabel accents (`group-hover:text-[var(--accent)]`), and meta tag pill borders/backgrounds.
+    - **Global layout footers**: Do NOT render a global bottom `<Footer />` when the reference layout places copyright and social icons exclusively inside the sticky left sidebar (`<aside>`).
 
 ## File Naming Conventions
 
