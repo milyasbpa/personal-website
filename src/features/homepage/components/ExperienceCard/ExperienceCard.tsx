@@ -2,19 +2,26 @@
 
 import React from 'react';
 import { ExperienceItem } from '../../types';
-import { HOMEPAGE_DICTIONARY } from '../../data/homeData';
 import { Pill } from '@/core/components/ui/Pill/Pill';
 import { cn } from '@/core/lib/cn';
 
 export interface ExperienceCardProps {
   job: ExperienceItem;
+  ariaLabelPrefix?: string;
+  atLabel?: string;
+  fullStoryLabel?: string;
   onSelect?: (job: ExperienceItem) => void;
   className?: string;
 }
 
-export function ExperienceCard({ job, onSelect, className }: ExperienceCardProps) {
-  const cardDict = HOMEPAGE_DICTIONARY.sections.experience.card;
-
+export function ExperienceCard({
+  job,
+  ariaLabelPrefix = 'View full details for',
+  atLabel = 'at',
+  fullStoryLabel = 'Full story',
+  onSelect,
+  className,
+}: ExperienceCardProps) {
   return (
     <button
       type="button"
@@ -25,7 +32,7 @@ export function ExperienceCard({ job, onSelect, className }: ExperienceCardProps
         'transition-all duration-200 hover:-translate-y-0.5 hover:shadow-sm cursor-pointer',
         className
       )}
-      aria-label={`${cardDict.ariaLabelPrefix} ${job.role} ${cardDict.at} ${job.company}`}
+      aria-label={`${ariaLabelPrefix} ${job.role} ${atLabel} ${job.company}`}
     >
       <div className="flex items-start justify-between mb-1 gap-4">
         <div className="flex items-center gap-2">
@@ -49,7 +56,7 @@ export function ExperienceCard({ job, onSelect, className }: ExperienceCardProps
           ))}
         </div>
         <span className="flex items-center gap-1.5 text-xs font-mono font-medium underline underline-offset-2 flex-shrink-0 text-[var(--fg-muted)] group-hover:gap-2 group-hover:text-[var(--accent)] transition-all duration-200">
-          {cardDict.fullStory}
+          {fullStoryLabel}
           <svg
             width="11"
             height="11"

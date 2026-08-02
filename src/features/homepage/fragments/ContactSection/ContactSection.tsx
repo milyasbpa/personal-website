@@ -23,7 +23,7 @@ export function ContactSection({ className }: ContactSectionProps) {
       <p className="text-xs mb-6 text-[var(--fg-subtle)]">
         {contactDict.subtitle}
       </p>
-      <ContactForm />
+      <ContactForm labels={contactDict.form} />
     </section>
   );
 }

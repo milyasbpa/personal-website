@@ -86,7 +86,12 @@ export function HomepageContainer() {
         className="hidden lg:flex lg:flex-col lg:sticky lg:top-14 lg:h-[calc(100vh-56px)] lg:w-[46%] lg:py-12 lg:pl-8 lg:pr-12"
       >
         <div className="flex items-center gap-4 mb-5">
-          <ProfileAvatar size="md" showStatusBadge={true} alt={PROFILE_INFO.avatarAlt} />
+          <ProfileAvatar
+            size="md"
+            showStatusBadge={true}
+            alt={PROFILE_INFO.avatarAlt}
+            statusBadgeLabel={PROFILE_INFO.statusBadge}
+          />
           <div>
             <h1 className="text-2xl font-bold tracking-tight text-[var(--fg)] leading-tight">
               {PROFILE_INFO.name}
@@ -202,7 +207,12 @@ export function HomepageContainer() {
             <NowBadge href="#now" statusText={PROFILE_INFO.statusBadge} />
           </div>
           <div className="flex items-center gap-4 mb-4">
-            <ProfileAvatar size="md" showStatusBadge={true} alt={PROFILE_INFO.avatarAlt} />
+            <ProfileAvatar
+              size="md"
+              showStatusBadge={true}
+              alt={PROFILE_INFO.avatarAlt}
+              statusBadgeLabel={PROFILE_INFO.statusBadge}
+            />
             <div>
               <h1 className="text-2xl font-bold tracking-tight text-[var(--fg)]">{PROFILE_INFO.name}</h1>
               <span className="font-mono font-bold text-sm text-[var(--accent)]">{PROFILE_INFO.nickname}</span>

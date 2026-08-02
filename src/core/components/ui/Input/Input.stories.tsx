@@ -1,0 +1,26 @@
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import { Input } from './Input';
+
+const meta: Meta<typeof Input> = {
+  title: 'Core/UI/Input',
+  component: Input,
+  tags: ['autodocs'],
+};
+
+export default meta;
+type Story = StoryObj<typeof Input>;
+
+export const Default: Story = {
+  args: {
+    label: 'Name',
+    placeholder: 'Your name',
+  },
+};
+
+export const WithError: Story = {
+  args: {
+    label: 'Email',
+    placeholder: 'you@example.com',
+    error: 'Please enter a valid email address',
+  },
+};

@@ -44,7 +44,12 @@ export function HeroSection({ className }: HeroSectionProps) {
         statusText={PROFILE_INFO.heroStatusBadge}
       />
       <div className="flex flex-col sm:flex-row sm:items-center gap-6">
-        <ProfileAvatar size="lg" showStatusBadge={true} alt={PROFILE_INFO.avatarAlt} />
+        <ProfileAvatar
+          size="lg"
+          showStatusBadge={true}
+          alt={PROFILE_INFO.avatarAlt}
+          statusBadgeLabel={PROFILE_INFO.statusBadge}
+        />
         <div>
           <h1
             id="hero-title"

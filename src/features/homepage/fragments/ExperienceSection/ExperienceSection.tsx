@@ -45,7 +45,14 @@ export function ExperienceSection({ className }: ExperienceSectionProps) {
       </h2>
       <div className="flex flex-col gap-4">
         {EXPERIENCE.map((job) => (
-          <ExperienceCard key={job.company} job={job} onSelect={(j) => setSelectedJob(j)} />
+          <ExperienceCard
+            key={job.company}
+            job={job}
+            ariaLabelPrefix={expDict.card.ariaLabelPrefix}
+            atLabel={expDict.card.at}
+            fullStoryLabel={expDict.card.fullStory}
+            onSelect={(j) => setSelectedJob(j)}
+          />
         ))}
       </div>
 

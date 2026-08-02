@@ -40,7 +40,13 @@ export function NowSection({ className }: NowSectionProps) {
 
       {/* GitHub Activity Heatmap Grid */}
       <div className="mb-4">
-        <HeatmapGrid />
+        <HeatmapGrid
+          title={nowDict.heatmap.title}
+          subtitle={nowDict.heatmap.subtitle}
+          ariaLabel={nowDict.heatmap.ariaLabel}
+          lessLabel={nowDict.heatmap.less}
+          moreLabel={nowDict.heatmap.more}
+        />
       </div>
 
       {/* Language */}

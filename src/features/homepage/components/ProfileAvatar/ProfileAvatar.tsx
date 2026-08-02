@@ -3,21 +3,22 @@
 import React from 'react';
 import Image from 'next/image';
 import { cn } from '@/core/lib/cn';
-import { PROFILE_INFO } from '../../data/homeData';
 
 export interface ProfileAvatarProps {
   src?: string;
   alt?: string;
   size?: 'sm' | 'md' | 'lg';
   showStatusBadge?: boolean;
+  statusBadgeLabel?: string;
   className?: string;
 }
 
 export function ProfileAvatar({
   src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=144&h=144&fit=crop&auto=format',
-  alt = PROFILE_INFO.avatarAlt,
+  alt = 'Ilyas Bashirah profile photo',
   size = 'md',
   showStatusBadge = true,
+  statusBadgeLabel = 'Available for Work',
   className,
 }: ProfileAvatarProps) {
   const sizeStyles = {
@@ -51,7 +52,7 @@ export function ProfileAvatar({
             'absolute bottom-0 right-0 flex items-center justify-center',
             badgeSizeStyles[size]
           )}
-          aria-label={PROFILE_INFO.statusBadge}
+          aria-label={statusBadgeLabel}
         >
           <span className="animate-ping absolute inline-flex w-full h-full rounded-full opacity-60 bg-[var(--accent)]" />
           <span
