@@ -12,7 +12,7 @@
   },
   "nav": [
     { "id": "about", "label": "About", "sub": "5+ yrs · React & TS", "meta": "Stack" },
-    { "id": "experience", "label": "Experience", "sub": "3 companies", "meta": "2019–now" },
+    { "id": "experience", "label": "Experience", "sub": "5 companies", "meta": "2019–now" },
     { "id": "writing", "label": "Writing", "sub": "3 published posts", "meta": "Blog" },
     { "id": "now", "label": "Self Exploration", "sub": "What I'm working on", "meta": "Jul 2026" },
     { "id": "contact", "label": "Contact", "sub": "Open to opportunities", "meta": "Hire me" }
@@ -65,55 +65,77 @@
       },
       "items": [
         {
-          "company": "Vercel",
+          "company": "Trinity Wizards",
           "url": "#",
-          "role": "Senior Frontend Engineer",
-          "dates": "Jan 2023 — Present",
-          "location": "Remote · San Francisco, CA",
-          "desc": "Building the Next.js App Router DX and developer-facing dashboard tooling used by 1M+ developers globally.",
-          "fullDesc": "As a Senior Frontend Engineer at Vercel, I work at the intersection of developer experience and product engineering — owning the App Router documentation tooling, internal component libraries, and the Vercel Dashboard used by over a million developers worldwide. I collaborate closely with the Next.js core team to ship features that shape how modern web apps are built.",
+          "role": "Senior Frontend Developer",
+          "dates": "Jan 2024 — Present",
+          "location": "Kuala Lumpur, Malaysia · Remote",
+          "desc": "Architected a multi-step booking funnel for Malaysia Airlines integrating Amadeus APIs across cart, booking, and extra services modules, decoupling URL parameters, server state, and persisted session drafts across 6 checkout modules to eliminate cross-step state contamination.",
+          "fullDesc": "Architected a multi-step booking funnel for Malaysia Airlines integrating Amadeus APIs across cart, booking, and extra services modules, decoupling URL parameters, server state, and persisted session drafts across 6 checkout modules to eliminate cross-step state contamination.",
           "points": [
-            "Led the frontend rebuild of the Vercel Dashboard analytics page — reduced initial load time by 42% through route-level code splitting and streaming SSR.",
-            "Architected a shared component library (70+ components) used across 4 product teams, with full Storybook documentation and automated visual regression tests.",
-            "Designed and shipped the App Router migration guide tooling — an interactive step-by-step UI used by 200K+ developers.",
-            "Established frontend performance budgets and Lighthouse CI gates across the monorepo, catching regressions before production.",
-            "Mentored 2 junior engineers through structured code reviews and weekly 1:1 architecture sessions."
+            "Architected a multi-step booking funnel for Malaysia Airlines integrating Amadeus APIs across cart, booking, and extra services modules, decoupling URL parameters, server state, and persisted session drafts across 6 checkout modules to eliminate cross-step state contamination.",
+            "Engineered real-time seat selection UI using WebSockets and component virtualization, handling concurrent seat-locking mechanisms without main-thread UI degradation or double-booking race conditions.",
+            "Integrated payment processing using the MOP (Means of Payment) SDK, implementing automatic session recovery and error boundaries to secure multi-currency transactions during checkout."
           ],
-          "tech": ["Next.js", "TypeScript", "Tailwind CSS", "React"]
+          "tech": ["Next.js", "TypeScript", "Redux", "WebSockets", "Amadeus GDS", "MOP SDK"]
         },
         {
-          "company": "Linear",
+          "company": "Alvisual",
+          "url": "#",
+          "role": "Senior Frontend Developer",
+          "dates": "Jan 2022 — Jan 2024",
+          "location": "Singapore · Remote",
+          "desc": "Engineered a cross-platform PWA for AI-powered face and scalp analysis deployed across retail outlet tablets in Singapore (iPad/Windows Surface), offloading 10,000+ image coordinate calculations to Web Workers to enable instant annotation toggling and smooth 60 FPS stylus editing while bypassing Safari WebKit canvas memory limits.",
+          "fullDesc": "Engineered a cross-platform PWA for AI-powered face and scalp analysis deployed across retail outlet tablets in Singapore (iPad/Windows Surface), offloading 10,000+ image coordinate calculations to Web Workers to enable instant annotation toggling and smooth 60 FPS stylus editing while bypassing Safari WebKit canvas memory limits.",
+          "points": [
+            "Engineered a cross-platform PWA for AI-powered face and scalp analysis deployed across retail outlet tablets in Singapore (iPad/Windows Surface), offloading 10,000+ image coordinate calculations to Web Workers to enable instant annotation toggling and smooth 60 FPS stylus editing while bypassing Safari WebKit canvas memory limits.",
+            "Architected PWA deployment architecture across Kubernetes clusters, implementing versioned asset caching and Service Worker lifecycle update strategies to eliminate stale cache issues and ChunkLoadErrors during live retail tablet updates.",
+            "Designed an offline-first PWA data synchronization architecture, queueing 10,000+ scan coordinate payloads in IndexedDB during retail Wi-Fi dropouts to prevent data loss and ensure uninterrupted tablet consultations."
+          ],
+          "tech": ["React.js", "TypeScript", "PWA", "Web Workers", "IndexedDB", "Canvas API"]
+        },
+        {
+          "company": "Bank Rakyat Indonesia",
+          "url": "#",
+          "role": "Technical Lead",
+          "dates": "Jan 2021 — Dec 2021",
+          "location": "Jakarta, Indonesia",
+          "desc": "Created and governed an enterprise React & TypeScript UI component library across AI banking portals at Bank Rakyat Indonesia, standardizing design tokens, accessible component APIs, and usage documentation adopted across multiple engineering squads.",
+          "fullDesc": "Created and governed an enterprise React & TypeScript UI component library across AI banking portals at Bank Rakyat Indonesia, standardizing design tokens, accessible component APIs, and usage documentation adopted across multiple engineering squads.",
+          "points": [
+            "Created and governed an enterprise React & TypeScript UI component library across AI banking portals at Bank Rakyat Indonesia, standardizing design tokens, accessible component APIs, and usage documentation adopted across multiple engineering squads.",
+            "Architected data-heavy dashboard UIs and interactive geolocation maps for BRI's AI Department, rendering daily AI-targeted customer leads and location routing for field officers (Mantri) with zero UI latency and resilient state hydration.",
+            "Led a team of 5+ frontend engineers in the AI department, establishing a PR review assignment process and review checklist to eliminate PR bottlenecks and enforce SonarQube quality gates prior to release."
+          ],
+          "tech": ["React.js", "TypeScript", "Redux", "Design Tokens", "SonarQube", "Map APIs"]
+        },
+        {
+          "company": "DDTC",
+          "url": "#",
+          "role": "Lead Frontend Developer",
+          "dates": "Jun 2020 — Dec 2020",
+          "location": "Jakarta, Indonesia",
+          "desc": "Led frontend development for 5+ tax management applications using Nuxt.js and TypeScript, standardizing SSR architecture and API data hydration across client portals.",
+          "fullDesc": "Led frontend development for 5+ tax management applications using Nuxt.js and TypeScript, standardizing SSR architecture and API data hydration across client portals.",
+          "points": [
+            "Led frontend development for 5+ tax management applications using Nuxt.js and TypeScript, standardizing SSR architecture and API data hydration across client portals.",
+            "Optimized technical SEO and rendering performance for public tax web portals, integrating Google Analytics event tracking to drive marketing insights and search visibility."
+          ],
+          "tech": ["Nuxt.js", "Vue.js", "TypeScript", "Vuex", "SSR", "Technical SEO"]
+        },
+        {
+          "company": "Telkom Indonesia",
           "url": "#",
           "role": "Frontend Engineer",
-          "dates": "Mar 2021 — Dec 2022",
-          "location": "Remote · San Francisco, CA",
-          "desc": "Shipped real-time collaboration features, keyboard-first UX patterns, and performance-critical rendering work.",
-          "fullDesc": "At Linear, I worked on one of the fastest and most keyboard-native project management tools in the industry. My focus was on real-time collaboration infrastructure, virtual rendering performance, and crafting the interaction design that Linear is known for — snappy, opinionated, and zero-friction.",
+          "dates": "Aug 2019 — Jun 2020",
+          "location": "Bandung, Indonesia",
+          "desc": "Developed responsive customer-facing web portals using React.js and TypeScript, integrating RESTful APIs to display account usage metrics and service dashboards.",
+          "fullDesc": "Developed responsive customer-facing web portals using React.js and TypeScript, integrating RESTful APIs to display account usage metrics and service dashboards.",
           "points": [
-            "Built real-time presence indicators and collaborative cursor tracking using WebSockets and CRDT-based state sync.",
-            "Implemented a virtualized list renderer for issues and projects — handled 10,000+ items with consistent 60fps scroll.",
-            "Designed and shipped the keyboard shortcut system (command palette, global keybindings) that became a core product differentiator.",
-            "Reduced bundle size by 31% through tree-shaking audits, dynamic imports, and migrating to lighter icon sets.",
-            "Collaborated directly with design to develop a motion language guide for all product animations."
+            "Developed responsive customer-facing web portals using React.js and TypeScript, integrating RESTful APIs to display account usage metrics and service dashboards.",
+            "Implemented client-side routing, Redux state management patterns, and HTTP session handling across core telecommunication user modules."
           ],
-          "tech": ["React", "TypeScript", "CSS Modules", "GraphQL"]
-        },
-        {
-          "company": "Shopify",
-          "url": "#",
-          "role": "Frontend Developer",
-          "dates": "Jun 2019 — Feb 2021",
-          "location": "Toronto, Canada",
-          "desc": "Contributed to Polaris design system and merchant-facing storefront experiences on the checkout team.",
-          "fullDesc": "At Shopify I started my career on the Checkout team, contributing to one of the highest-traffic, highest-stakes frontend surfaces on the web. I later moved to the Polaris design system team, where I helped shape the component library used by thousands of internal and external developers building on Shopify.",
-          "points": [
-            "Shipped accessible, responsive UI components for the checkout flow — serving 500M+ transactions annually.",
-            "Contributed 12 new components to Polaris (Shopify's design system) including DataTable, DatePicker, and Tooltip variants.",
-            "Wrote comprehensive accessibility audits (WCAG 2.1 AA) for the merchant admin, fixing 40+ violations.",
-            "Built an automated component documentation generator using AST parsing — eliminated manual doc maintenance.",
-            "Participated in the Great Storefront Migration (Liquid → React) as part of a 15-engineer cross-functional squad."
-          ],
-          "tech": ["React", "Ruby on Rails", "Sass", "GraphQL"]
+          "tech": ["React.js", "TypeScript", "Redux", "React Router", "REST APIs"]
         }
       ]
     },

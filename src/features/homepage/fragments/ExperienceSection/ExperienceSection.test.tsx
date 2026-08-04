@@ -7,9 +7,11 @@ describe('ExperienceSection', () => {
   it('renders section heading and job cards', () => {
     render(<ExperienceSection />);
     expect(screen.getByRole('heading', { name: /experience/i })).toBeInTheDocument();
-    expect(screen.getByText('Vercel')).toBeInTheDocument();
-    expect(screen.getByText('Linear')).toBeInTheDocument();
-    expect(screen.getByText('Shopify')).toBeInTheDocument();
+    expect(screen.getByText('Trinity Wizards')).toBeInTheDocument();
+    expect(screen.getByText('Alvisual')).toBeInTheDocument();
+    expect(screen.getByText('Bank Rakyat Indonesia')).toBeInTheDocument();
+    expect(screen.getByText('DDTC')).toBeInTheDocument();
+    expect(screen.getByText('Telkom Indonesia')).toBeInTheDocument();
   });
 
   it('renders resume download link', () => {

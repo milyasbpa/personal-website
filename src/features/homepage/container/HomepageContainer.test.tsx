@@ -25,6 +25,6 @@ describe('HomepageContainer', () => {
 
     // Check sticky sidebar navigation buttons
     expect(screen.getByRole('button', { name: /about[\s\S]*5\+ yrs[\s\S]*react & ts[\s\S]*stack/i })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /experience[\s\S]*3 companies[\s\S]*2019–now/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /experience[\s\S]*5 companies[\s\S]*2019–now/i })).toBeInTheDocument();
   }, 15000);
 });
