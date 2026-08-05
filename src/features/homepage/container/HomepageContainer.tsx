@@ -8,7 +8,6 @@ import { FeaturedWritingSection } from '../fragments/FeaturedWritingSection/Feat
 import { NowSection } from '../fragments/NowSection/NowSection';
 import { ContactSection } from '../fragments/ContactSection/ContactSection';
 import { ProfileAvatar } from '../components/ProfileAvatar/ProfileAvatar';
-import { NowBadge } from '@/core/components/ui/NowBadge/NowBadge';
 import { cn } from '@/core/lib/cn';
 import {
   HOMEPAGE_DICTIONARY,
@@ -203,9 +202,6 @@ export function HomepageContainer() {
       <main className="lg:w-[54%] px-6 lg:pl-8 lg:pr-8 py-10 lg:py-12 flex flex-col gap-14">
         {/* Mobile Hero (only visible on small screens < lg) */}
         <div className="lg:hidden">
-          <div className="flex items-center gap-3 mb-5">
-            <NowBadge href="#now" statusText={PROFILE_INFO.statusBadge} />
-          </div>
           <div className="flex items-center gap-4 mb-4">
             <ProfileAvatar
               size="md"

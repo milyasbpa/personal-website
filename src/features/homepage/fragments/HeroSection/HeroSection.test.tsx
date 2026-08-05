@@ -9,7 +9,7 @@ describe('HeroSection', () => {
     expect(screen.getByRole('heading', { name: /ilyas bashirah/i })).toBeInTheDocument();
     expect(screen.getByText(/call me bas\./i)).toBeInTheDocument();
     expect(
-      screen.getByText(/crafting interfaces with intention/i)
+      screen.getByText(/architecting resilient web applications with intention/i)
     ).toBeInTheDocument();
   });
 
