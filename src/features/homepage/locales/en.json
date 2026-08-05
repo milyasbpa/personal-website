@@ -3,24 +3,58 @@
     "name": "Ilyas Bashirah",
     "nicknamePrefix": "Call me ",
     "nickname": "bas.",
-    "tagline": "Crafting interfaces with intention.",
-    "bioShort": "Senior frontend engineer — design systems, performance, DX. Also studying 日本語 (JLPT N5).",
-    "mobileBio": "Crafting interfaces with intention. Senior frontend engineer focused on design systems and performance.",
+    "tagline": "Architecting resilient web applications with intention.",
+    "bioShort": "Senior Frontend Engineer — web architecture, performance & design systems. Also studying 日本語 (JLPT N5).",
+    "mobileBio": "Architecting resilient web applications with intention. Senior Frontend Engineer — web architecture, performance & design systems. Also studying 日本語 (JLPT N5).",
     "statusBadge": "Available for Work",
     "heroStatusBadge": "Available for Work — Open to Senior Frontend roles",
     "avatarAlt": "Ilyas Bashirah"
   },
   "nav": [
-    { "id": "about", "label": "About", "sub": "5+ yrs · React & TS", "meta": "Stack" },
-    { "id": "experience", "label": "Experience", "sub": "5 companies", "meta": "2019–now" },
-    { "id": "writing", "label": "Writing", "sub": "3 published posts", "meta": "Blog" },
-    { "id": "now", "label": "Self Exploration", "sub": "What I'm working on", "meta": "Jul 2026" },
-    { "id": "contact", "label": "Contact", "sub": "Open to opportunities", "meta": "Hire me" }
+    {
+      "id": "about",
+      "label": "About",
+      "sub": "5+ yrs · React & TS",
+      "meta": "Stack"
+    },
+    {
+      "id": "experience",
+      "label": "Experience",
+      "sub": "5 companies",
+      "meta": "2019–now"
+    },
+    {
+      "id": "writing",
+      "label": "Writing",
+      "sub": "3 published posts",
+      "meta": "Blog"
+    },
+    {
+      "id": "now",
+      "label": "Self Exploration",
+      "sub": "What I'm working on",
+      "meta": "Jul 2026"
+    },
+    {
+      "id": "contact",
+      "label": "Contact",
+      "sub": "Open to opportunities",
+      "meta": "Hire me"
+    }
   ],
   "social": [
-    { "label": "GitHub", "href": "https://github.com" },
-    { "label": "LinkedIn", "href": "https://linkedin.com" },
-    { "label": "Email", "href": "mailto:ilyas@bas.dev" }
+    {
+      "label": "GitHub",
+      "href": "https://github.com"
+    },
+    {
+      "label": "LinkedIn",
+      "href": "https://linkedin.com"
+    },
+    {
+      "label": "Email",
+      "href": "mailto:ilyas@bas.dev"
+    }
   ],
   "sections": {
     "about": {
@@ -77,7 +111,14 @@
             "Engineered real-time seat selection UI using WebSockets and component virtualization, handling concurrent seat-locking mechanisms without main-thread UI degradation or double-booking race conditions.",
             "Integrated payment processing using the MOP (Means of Payment) SDK, implementing automatic session recovery and error boundaries to secure multi-currency transactions during checkout."
           ],
-          "tech": ["Next.js", "TypeScript", "Redux", "WebSockets", "Amadeus GDS", "MOP SDK"]
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "Redux",
+            "WebSockets",
+            "Amadeus GDS",
+            "MOP SDK"
+          ]
         },
         {
           "company": "Alvisual",
@@ -92,7 +133,14 @@
             "Architected PWA deployment architecture across Kubernetes clusters, implementing versioned asset caching and Service Worker lifecycle update strategies to eliminate stale cache issues and ChunkLoadErrors during live retail tablet updates.",
             "Designed an offline-first PWA data synchronization architecture, queueing 10,000+ scan coordinate payloads in IndexedDB during retail Wi-Fi dropouts to prevent data loss and ensure uninterrupted tablet consultations."
           ],
-          "tech": ["React.js", "TypeScript", "PWA", "Web Workers", "IndexedDB", "Canvas API"]
+          "tech": [
+            "React.js",
+            "TypeScript",
+            "PWA",
+            "Web Workers",
+            "IndexedDB",
+            "Canvas API"
+          ]
         },
         {
           "company": "Bank Rakyat Indonesia",
@@ -107,7 +155,14 @@
             "Architected data-heavy dashboard UIs and interactive geolocation maps for BRI's AI Department, rendering daily AI-targeted customer leads and location routing for field officers (Mantri) with zero UI latency and resilient state hydration.",
             "Led a team of 5+ frontend engineers in the AI department, establishing a PR review assignment process and review checklist to eliminate PR bottlenecks and enforce SonarQube quality gates prior to release."
           ],
-          "tech": ["React.js", "TypeScript", "Redux", "Design Tokens", "SonarQube", "Map APIs"]
+          "tech": [
+            "React.js",
+            "TypeScript",
+            "Redux",
+            "Design Tokens",
+            "SonarQube",
+            "Map APIs"
+          ]
         },
         {
           "company": "DDTC",
@@ -121,7 +176,14 @@
             "Led frontend development for 5+ tax management applications using Nuxt.js and TypeScript, standardizing SSR architecture and API data hydration across client portals.",
             "Optimized technical SEO and rendering performance for public tax web portals, integrating Google Analytics event tracking to drive marketing insights and search visibility."
           ],
-          "tech": ["Nuxt.js", "Vue.js", "TypeScript", "Vuex", "SSR", "Technical SEO"]
+          "tech": [
+            "Nuxt.js",
+            "Vue.js",
+            "TypeScript",
+            "Vuex",
+            "SSR",
+            "Technical SEO"
+          ]
         },
         {
           "company": "Telkom Indonesia",
@@ -135,7 +197,13 @@
             "Developed responsive customer-facing web portals using React.js and TypeScript, integrating RESTful APIs to display account usage metrics and service dashboards.",
             "Implemented client-side routing, Redux state management patterns, and HTTP session handling across core telecommunication user modules."
           ],
-          "tech": ["React.js", "TypeScript", "Redux", "React Router", "REST APIs"]
+          "tech": [
+            "React.js",
+            "TypeScript",
+            "Redux",
+            "React Router",
+            "REST APIs"
+          ]
         }
       ]
     },
