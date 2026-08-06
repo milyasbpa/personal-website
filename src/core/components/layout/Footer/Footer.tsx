@@ -7,9 +7,9 @@ export interface SocialLink {
 
 const SOCIAL_LINKS: SocialLink[] = [
   { label: 'GitHub', href: 'https://github.com/milyasbpa' },
-  { label: 'LinkedIn', href: 'https://linkedin.com/in/milyasbpa' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ilyas-arya-181a7a184/' },
   { label: 'Twitter / X', href: 'https://x.com/milyasbpa' },
-  { label: 'Email', href: 'mailto:ilyasbashirah@gmail.com' },
+  { label: 'Email', href: 'mailto:bashirahilyas@gmail.com' },
 ];
 
 export function Footer() {

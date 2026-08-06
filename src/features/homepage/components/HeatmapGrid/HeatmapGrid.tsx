@@ -3,10 +3,8 @@
 import React from 'react';
 import { useTheme } from 'next-themes';
 import { cn } from '@/core/lib/cn';
-import { DEFAULT_GITHUB_USERNAME } from '../../constants/github';
 
 export interface HeatmapGridProps {
-  username?: string;
   title?: string;
   subtitle?: string;
   ariaLabel?: string;
@@ -35,7 +33,6 @@ const DEFAULT_DATA: number[][] = Array.from({ length: 52 }, (_, weekIndex) =>
 );
 
 export function HeatmapGrid({
-  username = DEFAULT_GITHUB_USERNAME,
   title = 'GitHub Activity',
   subtitle = 'Contribution graph across personal & open-source projects',
   ariaLabel = 'GitHub annual contribution activity heatmap grid',
@@ -73,32 +70,6 @@ export function HeatmapGrid({
             {subtitle}
           </p>
         </div>
-        {username && (
-          <a
-            href={`https://github.com/${username}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-xs font-mono text-[var(--fg-muted)] hover:text-[var(--accent)] transition-colors group"
-          >
-            <span>@{username}</span>
-            <svg
-              width="12"
-              height="12"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-              className="group-hover:translate-x-0.5 transition-transform"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-              />
-            </svg>
-          </a>
-        )}
       </div>
       <div
         className="overflow-x-auto bg-transparent pb-2"

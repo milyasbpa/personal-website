@@ -44,7 +44,6 @@ export function NowSection({ className }: NowSectionProps) {
       {/* GitHub Activity Heatmap Grid */}
       <div className="mb-4">
         <HeatmapGrid
-          username={DEFAULT_GITHUB_USERNAME}
           data={gridData || undefined}
           totalContributions={totalContributions}
           title={nowDict.heatmap.title}

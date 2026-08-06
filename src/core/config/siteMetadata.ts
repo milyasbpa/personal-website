@@ -28,9 +28,9 @@ export const siteMetadata: SiteMetadata = {
   language: 'en-US',
   siteUrl: 'https://bas.co',
   siteRepo: 'https://github.com/milyasbpa/personal-website',
-  email: 'hello@bas.co',
+  email: 'bashirahilyas@gmail.com',
   github: 'https://github.com/milyasbpa',
-  linkedin: 'https://linkedin.com/in/ilyasbashirah',
+  linkedin: 'https://www.linkedin.com/in/ilyas-arya-181a7a184/',
   twitter: 'https://twitter.com/ilyasbashirah',
   socialLinks: [
     {
@@ -40,7 +40,7 @@ export const siteMetadata: SiteMetadata = {
     },
     {
       name: 'LinkedIn',
-      href: 'https://linkedin.com/in/ilyasbashirah',
+      href: 'https://www.linkedin.com/in/ilyas-arya-181a7a184/',
       ariaLabel: 'Visit LinkedIn profile',
     },
     {

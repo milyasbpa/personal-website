@@ -12,6 +12,6 @@ describe('Footer component', () => {
   it('renders social navigation links', () => {
     render(<Footer />);
     expect(screen.getByRole('link', { name: 'GitHub' })).toHaveAttribute('href', 'https://github.com/milyasbpa');
-    expect(screen.getByRole('link', { name: 'LinkedIn' })).toHaveAttribute('href', 'https://linkedin.com/in/milyasbpa');
+    expect(screen.getByRole('link', { name: 'LinkedIn' })).toHaveAttribute('href', 'https://www.linkedin.com/in/ilyas-arya-181a7a184/');
   });
 });
