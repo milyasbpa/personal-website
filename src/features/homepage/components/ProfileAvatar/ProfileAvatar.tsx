@@ -14,7 +14,7 @@ export interface ProfileAvatarProps {
 }
 
 export function ProfileAvatar({
-  src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=144&h=144&fit=crop&auto=format',
+  src = '/black-and-white.PNG',
   alt = 'Ilyas Bashirah profile photo',
   size = 'md',
   showStatusBadge = true,
