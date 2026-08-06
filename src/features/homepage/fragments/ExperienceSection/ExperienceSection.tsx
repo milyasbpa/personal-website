@@ -58,7 +58,7 @@ export function ExperienceSection({ className }: ExperienceSectionProps) {
 
       <a
         href={expDict.resumeButton.url}
-        download
+        download="CV_Ilyas_Bashirah_ATS.pdf"
         className={cn(
           'mt-6 w-full flex items-center justify-between px-5 py-4 rounded-xl border border-[var(--border)]',
           'bg-[var(--bg-card)] text-[var(--fg-muted)] hover:border-[var(--accent-border)] hover:text-[var(--fg)]',
