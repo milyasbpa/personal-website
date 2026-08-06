@@ -3,14 +3,17 @@
 import React from 'react';
 import { useTheme } from 'next-themes';
 import { cn } from '@/core/lib/cn';
+import { DEFAULT_GITHUB_USERNAME } from '../../constants/github';
 
 export interface HeatmapGridProps {
+  username?: string;
   title?: string;
   subtitle?: string;
   ariaLabel?: string;
   lessLabel?: string;
   moreLabel?: string;
   data?: number[][];
+  totalContributions?: number | null;
   levelsLight?: string[];
   levelsDark?: string[];
   className?: string;
@@ -32,12 +35,14 @@ const DEFAULT_DATA: number[][] = Array.from({ length: 52 }, (_, weekIndex) =>
 );
 
 export function HeatmapGrid({
+  username = DEFAULT_GITHUB_USERNAME,
   title = 'GitHub Activity',
   subtitle = 'Contribution graph across personal & open-source projects',
   ariaLabel = 'GitHub annual contribution activity heatmap grid',
   lessLabel = 'Less',
   moreLabel = 'More',
   data = DEFAULT_DATA,
+  totalContributions = null,
   levelsLight = DEFAULT_LEVELS_LIGHT,
   levelsDark = DEFAULT_LEVELS_DARK,
   className,
@@ -54,13 +59,46 @@ export function HeatmapGrid({
       )}
       data-testid="heatmap-grid"
     >
-      <div className="flex items-start justify-between mb-4">
+      <div className="flex items-start justify-between mb-4 gap-4 flex-wrap">
         <div>
-          <h3 className="text-sm font-semibold text-[var(--fg)]">{title}</h3>
+          <div className="flex items-center gap-2">
+            <h3 className="text-sm font-semibold text-[var(--fg)]">{title}</h3>
+            {totalContributions !== null && (
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded-full border border-[var(--accent-border)] bg-[var(--accent-light)] text-[var(--accent)]">
+                {totalContributions} contributions
+              </span>
+            )}
+          </div>
           <p className="text-xs mt-0.5 text-[var(--fg-subtle)]">
             {subtitle}
           </p>
         </div>
+        {username && (
+          <a
+            href={`https://github.com/${username}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-xs font-mono text-[var(--fg-muted)] hover:text-[var(--accent)] transition-colors group"
+          >
+            <span>@{username}</span>
+            <svg
+              width="12"
+              height="12"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              className="group-hover:translate-x-0.5 transition-transform"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+              />
+            </svg>
+          </a>
+        )}
       </div>
       <div
         className="overflow-x-auto bg-transparent pb-2"

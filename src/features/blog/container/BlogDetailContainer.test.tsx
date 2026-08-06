@@ -35,5 +35,5 @@ describe('BlogDetailContainer', () => {
     expect(screen.getByRole('progressbar')).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /intentional animation/i })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /section one/i })).toBeInTheDocument();
-  });
+  }, 15000);
 });

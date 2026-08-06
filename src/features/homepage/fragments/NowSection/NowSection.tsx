@@ -3,6 +3,8 @@
 import React from 'react';
 import { NOW_ITEMS, LANGUAGE_ITEMS, HOMEPAGE_DICTIONARY } from '../../data/homeData';
 import { HeatmapGrid } from '../../components/HeatmapGrid/HeatmapGrid';
+import { useGithubContributions } from '../../hooks/useGithubContributions';
+import { DEFAULT_GITHUB_USERNAME } from '../../constants/github';
 import { cn } from '@/core/lib/cn';
 
 export interface NowSectionProps {
@@ -11,6 +13,7 @@ export interface NowSectionProps {
 
 export function NowSection({ className }: NowSectionProps) {
   const nowDict = HOMEPAGE_DICTIONARY.sections.now;
+  const { gridData, totalContributions } = useGithubContributions(DEFAULT_GITHUB_USERNAME);
 
   return (
     <section id="now" aria-labelledby="now-title" className={cn('', className)}>
@@ -41,6 +44,9 @@ export function NowSection({ className }: NowSectionProps) {
       {/* GitHub Activity Heatmap Grid */}
       <div className="mb-4">
         <HeatmapGrid
+          username={DEFAULT_GITHUB_USERNAME}
+          data={gridData || undefined}
+          totalContributions={totalContributions}
           title={nowDict.heatmap.title}
           subtitle={nowDict.heatmap.subtitle}
           ariaLabel={nowDict.heatmap.ariaLabel}
